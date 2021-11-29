@@ -1,0 +1,21 @@
+<h2>Listings</h2>
+<div class="col-md-12 d-flex justify-content-center">
+  <div class="col-md-10 border border-1 border-dark">
+    <mat-grid-list cols="3" rowHeight="700px">
+      <mat-grid-tile *ngFor="let listing of listings">
+        <mat-card class="cardStyle">
+            <img mat-card-image src="{{listing.imageUrl}}" alt="image"/>
+          <div class="testing"></div>
+          <mat-card-content>
+            <mat-card-title>{{listing.title}}</mat-card-title>
+            <p>{{listing.info.description}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
