@@ -2,8 +2,8 @@ mat-toolbar {
   color: #ebe6d9;
 }
 
-img {
-  width: 60px;
+.logo {
+  width: 100px;
 }
 
 .spacer {
