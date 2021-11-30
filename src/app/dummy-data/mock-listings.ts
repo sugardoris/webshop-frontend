@@ -16,10 +16,10 @@ export const MockListings: Listing[] = [
     },
     price: 370,
     category: Categories.BAGS,
-    imageUrl: '../../assets/images/thumb/navy-blue-bag.jpg',
+    imageUrl: '../../assets/images/thumb/navy-blue-bag.png',
   },
   {
-    title: 'Lilac Irish Crochet Handbag',
+    title: 'Handmade Irish Crochet Handbag',
     info: {
       description:
         'Unique handmade Irish crochet handbag with leather handles. This bag is one of a kind (literally - there is only one!), ' +
@@ -32,10 +32,10 @@ export const MockListings: Listing[] = [
     },
     price: 420,
     category: Categories.BAGS,
-    imageUrl: '../../assets/images/thumb/lilac-bag.jpg',
+    imageUrl: '../../assets/images/thumb/lilac-bag.png',
   },
   {
-    title: 'Red Irish Crochet Handbag',
+    title: 'Red Handmade Irish Crochet Handbag',
     info: {
       description:
         'Unique handmade Irish crochet handbag with matte gold details. This bag is one of a kind (literally - there is only one!), ' +
@@ -48,7 +48,7 @@ export const MockListings: Listing[] = [
     },
     price: 420,
     category: Categories.BAGS,
-    imageUrl: '../../assets/images/thumb/red-bag.jpg',
+    imageUrl: '../../assets/images/thumb/red-bag.png',
   },
   {
     title: 'Christmas Irish Crochet Doily',
@@ -62,10 +62,10 @@ export const MockListings: Listing[] = [
     },
     price: 90,
     category: Categories.DOILIES,
-    imageUrl: '../../assets/images/thumb/doily4.jpg',
+    imageUrl: '../../assets/images/thumb/doily4.png',
   },
   {
-    title: 'Irish Crochet Doily',
+    title: 'Handmade Designer Crochet Doily',
     info: {
       description:
         'High quality handmade Irish crochet doily. Design by Dot Drake. ' +
@@ -76,7 +76,7 @@ export const MockListings: Listing[] = [
     },
     price: 70,
     category: Categories.DOILIES,
-    imageUrl: '../../assets/images/thumb/doily-1.jpg',
+    imageUrl: '../../assets/images/thumb/doily-1.png',
   },
   {
     title: 'Handmade Designer Crochet Doily',
@@ -90,10 +90,10 @@ export const MockListings: Listing[] = [
     },
     price: 70,
     category: Categories.DOILIES,
-    imageUrl: '../../assets/images/thumb/doily2.jpg',
+    imageUrl: '../../assets/images/thumb/doily2.png',
   },
   {
-    title: 'Handmade Designer Crochet Doily',
+    title: 'Handmade Designer Irish Crochet Doily',
     info: {
       description:
         'High quality handmade crochet doily. Design by Patricia Kristoffersen. ' +
@@ -104,7 +104,7 @@ export const MockListings: Listing[] = [
     },
     price: 70,
     category: Categories.DOILIES,
-    imageUrl: '../../assets/images/thumb/doily3.jpg',
+    imageUrl: '../../assets/images/thumb/doily3.png',
   },
   {
     title: 'Cross Stitch Bookmark',
@@ -117,7 +117,7 @@ export const MockListings: Listing[] = [
     },
     price: 30,
     category: Categories.BOOKMARKS,
-    imageUrl: '../../assets/images/thumb/bookmark1.jpg',
+    imageUrl: '../../assets/images/thumb/bookmark1.png',
   },
   {
     title: 'Cross Stitch Bookmark',
@@ -130,7 +130,7 @@ export const MockListings: Listing[] = [
     },
     price: 30,
     category: Categories.BOOKMARKS,
-    imageUrl: '../../assets/images/thumb/bookmark2.jpg',
+    imageUrl: '../../assets/images/thumb/bookmark2.png',
   },
   {
     title: 'Cross Stitch Bookmark',
@@ -143,7 +143,7 @@ export const MockListings: Listing[] = [
     },
     price: 30,
     category: Categories.BOOKMARKS,
-    imageUrl: '../../assets/images/thumb/bookmark3.jpg',
+    imageUrl: '../../assets/images/thumb/bookmark3.png',
   },
   {
     title: 'Cross Stitch Christmas Bookmark',
@@ -157,10 +157,10 @@ export const MockListings: Listing[] = [
     },
     price: 30,
     category: Categories.BOOKMARKS,
-    imageUrl: '../../assets/images/thumb/xmas-bookmark.jpg',
+    imageUrl: '../../assets/images/thumb/xmas-bookmark.png',
   },
   {
-    title: 'Beaded Cross Stitch Christmas Ornament',
+    title: 'Cross Stitch Christmas Ornament',
     info: {
       description:
         'Luxury handmade cross stitch Christmas ornament. Covered with acrylic coat for longer duration.',
@@ -171,7 +171,7 @@ export const MockListings: Listing[] = [
     },
     price: 35,
     category: Categories.ORNAMENTS,
-    imageUrl: '../../assets/images/thumb/mandolin-xmas.jpg',
+    imageUrl: '../../assets/images/thumb/mandolin-xmas.png',
   },
   {
     title: 'Beaded Cross Stitch Christmas Ornament',
@@ -185,7 +185,7 @@ export const MockListings: Listing[] = [
     },
     price: 35,
     category: Categories.ORNAMENTS,
-    imageUrl: '../../assets/images/thumb/violin-xmas.JPG',
+    imageUrl: '../../assets/images/thumb/violin-xmas.png',
   },
   {
     title: 'Beaded Cross Stitch Christmas Ornament',
@@ -199,7 +199,21 @@ export const MockListings: Listing[] = [
     },
     price: 35,
     category: Categories.ORNAMENTS,
-    imageUrl: '../../assets/images/thumb/drum-xmas.jpg',
+    imageUrl: '../../assets/images/thumb/drum-xmas.png',
+  },
+  {
+    title: 'Beaded Cross Stitch Christmas Ornament',
+    info: {
+      description:
+        'Luxury handmade cross stitch Christmas ornament. Covered with acrylic coat for longer duration.',
+      materials:
+        'cotton thread, perforated paper, glass beads, acrylic coat, felt',
+      height: 9,
+      width: 5,
+    },
+    price: 35,
+    category: Categories.ORNAMENTS,
+    imageUrl: '../../assets/images/thumb/harp-xmas.png',
   },
   {
     title: 'Halloween Cross-Stitch Magnet',
@@ -212,7 +226,7 @@ export const MockListings: Listing[] = [
     },
     price: 20,
     category: Categories.MAGNETS,
-    imageUrl: '../../assets/images/thumb/cauldron.jpg',
+    imageUrl: '../../assets/images/thumb/cauldron.png',
   },
   {
     title: 'Halloween Cross-Stitch Magnet',
@@ -225,7 +239,7 @@ export const MockListings: Listing[] = [
     },
     price: 20,
     category: Categories.MAGNETS,
-    imageUrl: '../../assets/images/thumb/jack-o-lantern.jpg',
+    imageUrl: '../../assets/images/thumb/jack-o-lantern.png',
   },
   {
     title: 'Halloween Cross-Stitch Magnet',
@@ -238,6 +252,19 @@ export const MockListings: Listing[] = [
     },
     price: 20,
     category: Categories.MAGNETS,
-    imageUrl: '../../assets/images/thumb/moon.jpg',
+    imageUrl: '../../assets/images/thumb/moon.png',
+  },
+  {
+    title: 'Halloween Cross-Stitch Magnet',
+    info: {
+      description:
+        'High quality handmade cross-stitch magnet with Halloween theme.',
+      materials: 'cotton thread, plastic canvas, magnetic sheet',
+      height: 8,
+      width: 5,
+    },
+    price: 20,
+    category: Categories.MAGNETS,
+    imageUrl: '../../assets/images/thumb/house.png',
   },
 ];

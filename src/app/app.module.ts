@@ -8,17 +8,35 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
+import { HeaderComponent } from './header/header.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
 
 @NgModule({
-  declarations: [AppComponent, ListingsComponent, ListingDetailComponent],
+  declarations: [
+    AppComponent,
+    ListingsComponent,
+    ListingDetailComponent,
+    HeaderComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
+    FlexLayoutModule,
+    MatIconModule,
+    MatToolbarModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MATERIAL_SANITY_CHECKS,
+      useValue: false,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

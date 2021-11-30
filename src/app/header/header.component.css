@@ -1,0 +1,15 @@
+mat-toolbar {
+  color: #ebe6d9;
+}
+
+img {
+  width: 60px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.iconImg {
+  width: 25px;
+}

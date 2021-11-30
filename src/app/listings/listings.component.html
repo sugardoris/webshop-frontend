@@ -1,21 +1,21 @@
-<h2>Listings</h2>
-<div class="col-md-12 d-flex justify-content-center">
-  <div class="col-md-10 border border-1 border-dark">
-    <mat-grid-list cols="3" rowHeight="700px">
-      <mat-grid-tile *ngFor="let listing of listings">
-        <mat-card class="cardStyle">
-            <img mat-card-image src="{{listing.imageUrl}}" alt="image"/>
-          <div class="testing"></div>
-          <mat-card-content>
-            <mat-card-title>{{listing.title}}</mat-card-title>
-            <p>{{listing.info.description}}</p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
+<div class="content" fxLayoutAlign="center center">
+  <div fxLayout="row wrap" fxLayoutGap="30px grid" fxFlex="90%">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let listing of listings">
+      <mat-card class="mat-elevation-z4" tabindex="0">
+        <img mat-card-image src="{{listing.imageUrl}}" alt="image">
+        <mat-card-content class="cardContent">
+          <mat-card-subtitle>{{listing.title}}</mat-card-subtitle>
+          <h2>{{listing.price}} $</h2>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-icon-button>
+            <mat-icon aria-hidden="false" aria-label="favorite icon">favorite</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon aria-hidden="false" aria-label="cart icon">shopping_cart</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
 </div>
