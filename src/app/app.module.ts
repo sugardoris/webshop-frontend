@@ -12,7 +12,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
+import {
+  MATERIAL_SANITY_CHECKS,
+  MatRippleModule,
+} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
     FlexLayoutModule,
     MatIconModule,
     MatToolbarModule,
+    MatRippleModule,
   ],
   providers: [
     {

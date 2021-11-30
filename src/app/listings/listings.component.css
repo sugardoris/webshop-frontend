@@ -1,7 +1,27 @@
 .content {
   padding: 20px;
+  margin-top: 50px;
 }
 
 .cardContent {
   height: 60px;
+}
+
+.banner {
+  background-image: url("../../assets/images/full/banner-smaller.png");
+  height: 65%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.category {
+  text-decoration: none;
+  color: #7f543f;
+  font-size: large;
+}
+
+.mat-button-ripple {
+  display: none;
 }
