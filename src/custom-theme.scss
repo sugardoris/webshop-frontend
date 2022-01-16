@@ -75,6 +75,42 @@ $secondary-palette: (
   )
 );
 
+$warn-palette: (
+  50 : #f7ebe5,
+  100 : #ebccbf,
+  200 : #ddab94,
+  300 : #cf8969,
+  400 : #c56f48,
+  500 : #bb5628,
+  600 : #b54f24,
+  700 : #ac451e,
+  800 : #a43c18,
+  900 : #962b0f,
+  A100 : #ffd0c6,
+  A200 : #ffa693,
+  A400 : #ff7c60,
+  A700 : #ff6747,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$my-typography: mat.define-typography-config(
+  $font-family: 'Playfair Display, serif',
+);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -83,7 +119,7 @@ $WebShop-primary: mat.define-palette($primary-palette, 50);
 $WebShop-accent: mat.define-palette($secondary-palette, 400);
 
 // The warn palette is optional (defaults to red).
-$WebShop-warn: mat.define-palette(mat.$red-palette);
+$WebShop-warn: mat.define-palette($warn-palette, 900);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
@@ -92,7 +128,8 @@ $WebShop-theme: mat.define-light-theme((
     primary: $WebShop-primary,
     accent: $WebShop-accent,
     warn: $WebShop-warn,
-  )
+  ),
+  typography: $my-typography,
 ));
 
 // Include theme styles for core and each component used in your app.

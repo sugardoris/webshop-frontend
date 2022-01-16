@@ -16,6 +16,7 @@ import {
   MATERIAL_SANITY_CHECKS,
   MatRippleModule,
 } from '@angular/material/core';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {
     ListingsComponent,
     ListingDetailComponent,
     HeaderComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
