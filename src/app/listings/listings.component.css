@@ -7,7 +7,12 @@
   height: 60px;
 }
 
-.category {
+h2 {
+  font-family: Playfair Display, serif;
+  color: #757575;
+}
+
+.category-link {
   text-decoration: none;
   color: #7f543f;
   font-size: large;
@@ -28,4 +33,24 @@ img {
 
 img:hover {
   transform: scale(1.05);
+}
+
+.icons {
+  color: #7f543f;
+}
+
+mat-toolbar {
+  background-color: #ebe6d9;
+}
+
+.category {
+  font-family: Playfair Display, serif;
+  width: 150px;
+  background-color: whitesmoke;
+  border: none;
+}
+
+.category:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.2);
 }
