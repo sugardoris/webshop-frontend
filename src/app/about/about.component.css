@@ -19,3 +19,35 @@
   border: #7f543f 1px solid;
   width: 100%;
 }
+
+.aboutText1 {
+  font-family: Playfair Display, serif;
+  font-size: large;
+  line-height: 2;
+  text-align: left;
+  width: 80%;
+  color: #757575;
+}
+
+.aboutText2 {
+  font-family: Playfair Display, serif;
+  font-size: large;
+  line-height: 2;
+  text-align: right;
+  width: 80%;
+  color: #757575;
+}
+
+.aboutText3 {
+  font-family: Playfair Display, serif;
+  font-size: medium;
+  line-height: 1.6;
+  text-align: right;
+  width: 20%;
+  color: #757575;
+}
+
+.aboutIcon {
+  font-size: xx-large;
+  color: #946c5a;
+}
