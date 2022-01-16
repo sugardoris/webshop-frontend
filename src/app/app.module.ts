@@ -17,6 +17,7 @@ import {
   MatRippleModule,
 } from '@angular/material/core';
 import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AboutComponent } from './about/about.component';
     ListingDetailComponent,
     HeaderComponent,
     AboutComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+footer {
+  background-color: #946c5a;
+  color: #ebe6d9;
+  font-family: Playfair Display, serif;
+}
+
+.links {
+  text-decoration: none;
+  color: #ebe6d9;
+}
+
+.links:hover {
+  color: #e1cabf;
+}
