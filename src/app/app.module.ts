@@ -18,6 +18,9 @@ import {
 } from '@angular/material/core';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
+import { CartComponent } from './cart/cart.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,7 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     AboutComponent,
     FooterComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,8 @@ import { FooterComponent } from './footer/footer.component';
     MatIconModule,
     MatToolbarModule,
     MatRippleModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [
     {
