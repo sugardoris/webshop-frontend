@@ -2,8 +2,10 @@ footer {
   background-color: #a98676;
   color: #ebe6d9;
   font-family: Playfair Display, serif;
+  position: relative;
   bottom: 0;
   left: 0;
+  border-top: #7f543f 1px solid;
 }
 
 .links {

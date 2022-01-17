@@ -1,19 +1,68 @@
-<div fxLayout="row">
-  <div fxLayoutAlign="center" fxFlex>
-    <mat-card>
-      <mat-card-subtitle>Listing Title</mat-card-subtitle>
-      <mat-card-content>
-        <img class="listingImg" src="assets/images/thumb/lilac-bag.png" alt="image">
-        <span>$$$</span>
-        <mat-form-field appearance="outline">
-          <input matInput disabled>
-        </mat-form-field>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div fxLayoutAlign="center" fxFlex>
-    <div>
-
+<div fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign="space-evenly center" fxFlex class="topInfo pt-5 pb-1">
+    <div fxLayout="column" fxLayoutAlign="space-between center" class="infobox">
+      <mat-icon class="me-4">local_shipping</mat-icon>
+      <h3>Fast shipping</h3>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-between center" class="infobox">
+      <mat-icon class="me-4">lock</mat-icon>
+      <h3>Secure payment</h3>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-between center" class="infobox">
+      <mat-icon class="me-4">assignment_return_outline</mat-icon>
+      <h3>Easy returns</h3>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-between center" class="infobox">
+      <mat-icon class="me-4">groups</mat-icon>
+      <h3>Happy customers</h3>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-between center" class="infobox">
+      <mat-icon class="me-4">payments</mat-icon>
+      <h3>Moneyback guarantee</h3>
     </div>
   </div>
+  <hr class="divider">
+  <div fxLayout="row" fxLayoutAlign="start" class="cartItem p-2 ms-5 me-5">
+    <img class="listingImg me-5 ms-5" src="assets/images/thumb/lilac-bag.png" alt="image">
+    <div fxLayout="column" fxLayoutAlign="space-between center" class="titleAndAmount ms-5">
+      <h3>Listing Title</h3>
+      <h5>Amount bought</h5>
+      <div fxLayout="row" fxLayoutAlign="center center" class="amount">
+        <button class="less">-</button>
+        <input disabled style="width: 50px; text-align: center" value="1">
+        <button class="more ps-2 pe-2">+</button>
+      </div>
+    </div>
+    <span class="spacer"></span>
+    <div fxLayout="column" fxLayoutAlign="space-evenly center" class="titleAndAmount me-5">
+      <h1>200 $</h1>
+      <button mat-stroked-button class="remove ps-3 pt-1 pe-3 pb-1">Remove</button>
+    </div>
+  </div>
+  <hr class="divider">
+  <div fxLayout="row" fxLayoutAlign="start" class="proceed p-2 ms-5 me-5 mt-5 mb-5">
+    <button mat-stroked-button class="continue ps-3 pt-1 pe-3 pb-1 mt-5 ms-3">Continue shopping</button>
+    <span class="spacer"></span>
+    <div fxLayout="column" fxLayoutAlign="space-evenly end" class="titleAndAmount me-5">
+      <h1>Total: 200 $</h1>
+      <button mat-stroked-button class="proceedButton ps-3 pt-1 pe-3 pb-1">Proceed to checkout</button>
+    </div>
+  </div>
+  <div class="filler"></div>
 </div>
+
+<!--<div fxLayout="row">-->
+<!--  <div fxLayoutAlign="center" fxFlex>-->
+<!--    <mat-card>-->
+<!--      <mat-card-subtitle>Listing Title</mat-card-subtitle>-->
+<!--      <mat-card-content>-->
+<!--        <img class="listingImg me-5" src="assets/images/thumb/lilac-bag.png" alt="image">-->
+<!--      </mat-card-content>-->
+<!--    </mat-card>-->
+<!--  </div>-->
+<!--  <div fxLayoutAlign="center" fxFlex>-->
+<!--    <div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

@@ -13,3 +13,7 @@ mat-toolbar {
 .iconImg {
   width: 25px;
 }
+
+mat-toolbar {
+  border-bottom: #7f543f 1px solid;
+}

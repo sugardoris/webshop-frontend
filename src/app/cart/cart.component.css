@@ -1,4 +1,59 @@
 .listingImg {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
+}
+
+mat-icon {
+  font-size: xxx-large;
+  color: #c5a89b;
+}
+
+.infobox {
+  width: 170px;
+  height: 100px;
+  color: #757575;
+}
+
+h1, h3, h5 {
+  font-family: Playfair Display, serif;
+  color: #757575;
+}
+
+.divider {
+  width: 95%;
+  margin-left: 45px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.remove {
+  font-size: medium;
+  color: #7f543f;
+}
+
+.continue {
+  font-size: large;
+  color: #7f543f;
+}
+
+.proceedButton {
+  font-size: 20px;
+  color: #7f543f;
+  background-color: #ebe6d9;
+}
+
+.filler {
+  height: 56px;
+}
+
+.less {
+  border-radius: 5px 0 0 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.more {
+  border-radius: 0 5px 5px 0;
 }

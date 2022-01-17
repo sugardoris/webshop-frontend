@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { MatInputModule } from '@angular/material/input';
     MatRippleModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDividerModule,
   ],
   providers: [
     {
