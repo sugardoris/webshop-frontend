@@ -22,6 +22,9 @@ import { CartComponent } from './cart/cart.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import { MatDividerModule } from '@angular/material/divider';
     AboutComponent,
     FooterComponent,
     CartComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatFormFieldModule,
     MatInputModule,
     MatDividerModule,
+    MatStepperModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {

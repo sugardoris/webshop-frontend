@@ -1,0 +1,89 @@
+<mat-stepper #stepper>
+  <mat-step [stepControl]="firstFormGroup" errorMessage="Shipping information is required.">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Shipping Information</ng-template>
+      <div>
+        <mat-form-field appearance="fill" style="width: 420px">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill" class="me-3">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill" style="width: 420px">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill" class="me-3">
+          <mat-label>City</mat-label>
+          <input matInput formControlName="city" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Postal Code</mat-label>
+          <input matInput formControlName="postalCode" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Country</mat-label>
+          <input matInput formControlName="country" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-stroked-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Payment Information</ng-template>
+      <div>
+        <mat-form-field appearance="fill" style="width: 420px">
+          <mat-label>Card Holder</mat-label>
+          <input matInput formControlName="cardHolder" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill" style="width: 420px">
+          <mat-label>Card Number</mat-label>
+          <input matInput formControlName="cardNumber" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill" class="me-3">
+          <mat-label>Expiration Date</mat-label>
+          <input matInput formControlName="expiration" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>CVC</mat-label>
+          <input matInput formControlName="cvc" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <p>Go to a different step to see the error state</p>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Checkout</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button >Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper>
+
