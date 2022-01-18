@@ -17,6 +17,7 @@ export const MockListings: Listing[] = [
     price: 370,
     category: Categories.BAGS,
     imageUrl: '../../assets/images/thumb/navy-blue-bag.png',
+    amount: 1,
   },
   {
     title: 'Handmade Irish Crochet Handbag',
@@ -33,6 +34,7 @@ export const MockListings: Listing[] = [
     price: 420,
     category: Categories.BAGS,
     imageUrl: '../../assets/images/thumb/lilac-bag.png',
+    amount: 1,
   },
   {
     title: 'Red Handmade Irish Crochet Handbag',
@@ -49,6 +51,7 @@ export const MockListings: Listing[] = [
     price: 420,
     category: Categories.BAGS,
     imageUrl: '../../assets/images/thumb/red-bag.png',
+    amount: 1,
   },
   {
     title: 'Christmas Irish Crochet Doily',
@@ -63,6 +66,7 @@ export const MockListings: Listing[] = [
     price: 90,
     category: Categories.DOILIES,
     imageUrl: '../../assets/images/thumb/doily4.png',
+    amount: 1,
   },
   {
     title: 'Handmade Designer Crochet Doily',
@@ -77,6 +81,7 @@ export const MockListings: Listing[] = [
     price: 70,
     category: Categories.DOILIES,
     imageUrl: '../../assets/images/thumb/doily-1.png',
+    amount: 1,
   },
   {
     title: 'Handmade Designer Crochet Doily',
@@ -91,6 +96,7 @@ export const MockListings: Listing[] = [
     price: 70,
     category: Categories.DOILIES,
     imageUrl: '../../assets/images/thumb/doily2.png',
+    amount: 1,
   },
   {
     title: 'Handmade Designer Irish Crochet Doily',
@@ -105,6 +111,7 @@ export const MockListings: Listing[] = [
     price: 70,
     category: Categories.DOILIES,
     imageUrl: '../../assets/images/thumb/doily3.png',
+    amount: 1,
   },
   {
     title: 'Cross Stitch Bookmark',
@@ -118,6 +125,7 @@ export const MockListings: Listing[] = [
     price: 30,
     category: Categories.BOOKMARKS,
     imageUrl: '../../assets/images/thumb/bookmark1.png',
+    amount: 1,
   },
   {
     title: 'Cross Stitch Bookmark',
@@ -131,6 +139,7 @@ export const MockListings: Listing[] = [
     price: 30,
     category: Categories.BOOKMARKS,
     imageUrl: '../../assets/images/thumb/bookmark2.png',
+    amount: 1,
   },
   {
     title: 'Cross Stitch Bookmark',
@@ -144,6 +153,7 @@ export const MockListings: Listing[] = [
     price: 30,
     category: Categories.BOOKMARKS,
     imageUrl: '../../assets/images/thumb/bookmark3.png',
+    amount: 1,
   },
   {
     title: 'Cross Stitch Christmas Bookmark',
@@ -158,6 +168,7 @@ export const MockListings: Listing[] = [
     price: 30,
     category: Categories.BOOKMARKS,
     imageUrl: '../../assets/images/thumb/xmas-bookmark.png',
+    amount: 1,
   },
   {
     title: 'Cross Stitch Christmas Ornament',
@@ -172,6 +183,7 @@ export const MockListings: Listing[] = [
     price: 35,
     category: Categories.ORNAMENTS,
     imageUrl: '../../assets/images/thumb/mandolin-xmas.png',
+    amount: 1,
   },
   {
     title: 'Beaded Cross Stitch Christmas Ornament',
@@ -186,6 +198,7 @@ export const MockListings: Listing[] = [
     price: 35,
     category: Categories.ORNAMENTS,
     imageUrl: '../../assets/images/thumb/violin-xmas.png',
+    amount: 1,
   },
   {
     title: 'Beaded Cross Stitch Christmas Ornament',
@@ -200,6 +213,7 @@ export const MockListings: Listing[] = [
     price: 35,
     category: Categories.ORNAMENTS,
     imageUrl: '../../assets/images/thumb/drum-xmas.png',
+    amount: 1,
   },
   {
     title: 'Beaded Cross Stitch Christmas Ornament',
@@ -214,6 +228,7 @@ export const MockListings: Listing[] = [
     price: 35,
     category: Categories.ORNAMENTS,
     imageUrl: '../../assets/images/thumb/harp-xmas.png',
+    amount: 1,
   },
   {
     title: 'Halloween Cross-Stitch Magnet',
@@ -227,6 +242,7 @@ export const MockListings: Listing[] = [
     price: 20,
     category: Categories.MAGNETS,
     imageUrl: '../../assets/images/thumb/cauldron.png',
+    amount: 1,
   },
   {
     title: 'Halloween Cross-Stitch Magnet',
@@ -240,6 +256,7 @@ export const MockListings: Listing[] = [
     price: 20,
     category: Categories.MAGNETS,
     imageUrl: '../../assets/images/thumb/jack-o-lantern.png',
+    amount: 1,
   },
   {
     title: 'Halloween Cross-Stitch Magnet',
@@ -253,6 +270,7 @@ export const MockListings: Listing[] = [
     price: 20,
     category: Categories.MAGNETS,
     imageUrl: '../../assets/images/thumb/moon.png',
+    amount: 1,
   },
   {
     title: 'Halloween Cross-Stitch Magnet',
@@ -266,5 +284,6 @@ export const MockListings: Listing[] = [
     price: 20,
     category: Categories.MAGNETS,
     imageUrl: '../../assets/images/thumb/house.png',
+    amount: 1,
   },
 ];

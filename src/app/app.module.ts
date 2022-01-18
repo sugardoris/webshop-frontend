@@ -28,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PaymentCompleteComponent } from './payment-complete/payment-complete.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     CartComponent,
     CheckoutComponent,
     PaymentCompleteComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
