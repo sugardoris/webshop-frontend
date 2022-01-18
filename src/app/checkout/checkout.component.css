@@ -1,0 +1,11 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-card {
+  width: 50%;
+}
+
+.stepper-wrapper {
+  height: 570px;
+}

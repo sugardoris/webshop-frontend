@@ -25,6 +25,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PaymentCompleteComponent } from './payment-complete/payment-complete.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     CartComponent,
     CheckoutComponent,
+    PaymentCompleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDividerModule,
     MatStepperModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     {
