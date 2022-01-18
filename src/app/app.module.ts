@@ -29,6 +29,8 @@ import { PaymentCompleteComponent } from './payment-complete/payment-complete.co
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoginComponent } from './login/login.component';
+import { AddOrEditComponent } from './add-or-edit/add-or-edit.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { LoginComponent } from './login/login.component';
     CheckoutComponent,
     PaymentCompleteComponent,
     LoginComponent,
+    AddOrEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,7 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     MatDialogModule,
     MatProgressSpinnerModule,
+    MatSelectModule,
   ],
   providers: [
     {
