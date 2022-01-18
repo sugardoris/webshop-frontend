@@ -1,0 +1,71 @@
+<h1 class="ps-5 pt-5 pb-3">Add / Edit Item</h1>
+<form [formGroup]="itemGroup" class="ps-5 pb-5">
+  <div>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Category</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option value="Doilies">Doilies</mat-option>
+        <mat-option value="Bags">Bags</mat-option>
+        <mat-option value="Bookmarks">Bookmarks</mat-option>
+        <mat-option value="Ornaments">Ornaments</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Price</mat-label>
+      <input matInput formControlName="price" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Amount</mat-label>
+      <input matInput formControlName="amount" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Image URL</mat-label>
+      <input matInput formControlName="imageUrl" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Materials</mat-label>
+      <input matInput formControlName="materials" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Height</mat-label>
+      <input matInput formControlName="height" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Width</mat-label>
+      <input matInput formControlName="width" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Depth</mat-label>
+      <input matInput formControlName="depth" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-stroked-button>Submit</button>
+  </div>
+</form>
