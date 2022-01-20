@@ -1,15 +1,21 @@
 <mat-toolbar color="primary">
-  <img class="logo" src="../../assets/images/thumb/MWLtransparent.png" alt="logo">
+  <a style="padding: 0; margin: 0" routerLink="/about">
+    <img class="logo" src="../../assets/images/thumb/MWLtransparent.png" alt="logo">
+  </a>
   <span class="spacer"></span>
-  <span class="pe-3" style="color: #946c5a">About</span>
-  <span class="pe-3" style="color: #946c5a">Webshop</span>
-  <button mat-icon-button aria-label="facebook icon">
-    <mat-icon color="accent">facebook</mat-icon>
+  <span class="pe-3" style="color: #946c5a">
+    <a class="links" routerLink="/about">About</a>
+  </span>
+  <span class="pe-3" style="color: #946c5a">
+    <a class="links" routerLink="/listings">Webshop</a>
+  </span>
+  <button mat-icon-button aria-label="facebook icon" (click)="navigatePinterest()">
+    <img class="iconImg" src="../../assets/images/thumb/pinterest.png">
   </button>
-  <button mat-icon-button aria-label="instagram icon">
+  <button mat-icon-button aria-label="instagram icon" (click)="navigateInsta()">
     <img class="iconImg" src="../../assets/images/thumb/instagram.png">
   </button>
-  <button mat-icon-button aria-label="cart icon">
-    <mat-icon color="accent">shopping_cart</mat-icon>
-  </button>
+  <a class="links" routerLink="/cart">
+    <mat-icon class="links" color="accent">shopping_cart</mat-icon>
+  </a>
 </mat-toolbar>

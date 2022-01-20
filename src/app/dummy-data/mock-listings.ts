@@ -3,6 +3,7 @@ import { Categories } from '../model/categories';
 
 export const MockListings: Listing[] = [
   {
+    id: 1,
     title: 'Navy Blue Irish Crochet Handbag',
     info: {
       description:
@@ -20,6 +21,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 2,
     title: 'Handmade Irish Crochet Handbag',
     info: {
       description:
@@ -37,6 +39,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 3,
     title: 'Red Handmade Irish Crochet Handbag',
     info: {
       description:
@@ -54,6 +57,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 4,
     title: 'Christmas Irish Crochet Doily',
     info: {
       description:
@@ -69,6 +73,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 5,
     title: 'Handmade Designer Crochet Doily',
     info: {
       description:
@@ -84,6 +89,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 6,
     title: 'Handmade Designer Crochet Doily',
     info: {
       description:
@@ -99,6 +105,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 7,
     title: 'Handmade Designer Irish Crochet Doily',
     info: {
       description:
@@ -114,6 +121,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 8,
     title: 'Cross Stitch Bookmark',
     info: {
       description:
@@ -128,6 +136,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 9,
     title: 'Cross Stitch Bookmark',
     info: {
       description:
@@ -142,6 +151,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 10,
     title: 'Cross Stitch Bookmark',
     info: {
       description:
@@ -156,6 +166,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 11,
     title: 'Cross Stitch Christmas Bookmark',
     info: {
       description:
@@ -171,6 +182,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 12,
     title: 'Cross Stitch Christmas Ornament',
     info: {
       description:
@@ -186,6 +198,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 13,
     title: 'Beaded Cross Stitch Christmas Ornament',
     info: {
       description:
@@ -201,6 +214,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 14,
     title: 'Beaded Cross Stitch Christmas Ornament',
     info: {
       description:
@@ -216,6 +230,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 15,
     title: 'Beaded Cross Stitch Christmas Ornament',
     info: {
       description:
@@ -231,6 +246,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 16,
     title: 'Halloween Cross-Stitch Magnet',
     info: {
       description:
@@ -245,6 +261,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 17,
     title: 'Halloween Cross-Stitch Magnet',
     info: {
       description:
@@ -259,6 +276,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 18,
     title: 'Halloween Cross-Stitch Magnet',
     info: {
       description:
@@ -273,6 +291,7 @@ export const MockListings: Listing[] = [
     amount: 1,
   },
   {
+    id: 19,
     title: 'Halloween Cross-Stitch Magnet',
     info: {
       description:

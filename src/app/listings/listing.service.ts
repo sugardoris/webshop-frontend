@@ -6,9 +6,17 @@ import { MockListings } from '../dummy-data/mock-listings';
   providedIn: 'root',
 })
 export class ListingService {
+  listings?: Listing[];
+  listing?: Listing;
   constructor() {}
 
   getListings(): Listing[] {
-    return MockListings;
+    this.listings = MockListings;
+    return this.listings;
+  }
+
+  getListing(id: string): Listing {
+    this.listing = MockListings.find((listing) => listing.id.toString() == id);
+    return <Listing>this.listing;
   }
 }

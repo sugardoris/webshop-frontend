@@ -1,14 +1,16 @@
-<div fxLayout="row" class="pt-5">
+<button mat-flat-button class="ms-4 mt-5 back" (click)="goBack()">Back to shop</button>
+
+<div fxLayout="row" class="pt-3" *ngIf="listing">
   <div fxLayoutAlign="center" fxFlex class="mat-elevation-z0">
     <div class="p-5">
-      <img src="assets/images/full/about2.JPG" alt="detail-img">
+      <img src="{{listing.imageUrl}}" alt="detail-img">
     </div>
   </div>
   <div fxLayoutAlign="left" fxFlex class="mat-elevation-z0">
     <div class="p-5 aboutText1">
-      <h1>Listing Title</h1>
-      <h2>Price $</h2>
-      <button class="ps-4 pt-2 pe-4 pb-2" mat-stroked-button>Add to cart</button>
+      <h1>{{listing.title}}</h1>
+      <h2>{{listing.price}} $</h2>
+      <button class="ps-4 pt-2 pe-4 pb-2 cartButton" mat-stroked-button>Add to cart</button>
       <div class="info mt-4 mb-4">
         <h3>Information</h3>
         <ul class="infoList">
@@ -22,21 +24,19 @@
           </li>
           <li class="pb-2" fxLayoutAlign="start center">
             <mat-icon class="me-2">content_cut</mat-icon>
-            Materials: materials
+            Materials: {{listing.info.materials}}
           </li>
           <li class="pb-2" fxLayoutAlign="start center">
             <mat-icon class="me-2">straighten</mat-icon>
-            Height: height
-            Width: width
-            Depth: depth
+            Height: {{listing.info.height}} cm
+            Width: {{listing.info.width}} cm
+            Depth: {{listing.info.depth}} cm
           </li>
         </ul>
       </div>
       <div class="desc">
         <h3>Description</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et leo quis mi luctus vestibulum.
-          Nulla ornare massa ut nulla cursus posuere. Suspendisse quis lectus eu mi gravida efficitur non at velit.
-          Donec feugiat dictum augue, quis ornare mauris lobortis non.</p>
+        <p>{{listing.info.description}}</p>
       </div>
     </div>
   </div>

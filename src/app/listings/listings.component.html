@@ -16,15 +16,13 @@
   <div fxLayout="row wrap" fxLayoutGap="30px grid" fxFlex="90%">
     <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let listing of listings">
       <mat-card class="mat-elevation-z3" tabindex="0">
-        <img mat-card-image src="{{listing.imageUrl}}" alt="image">
+        <img mat-card-image src="{{listing.imageUrl}}" alt="image" routerLink="/listings/{{listing.id}}">
         <mat-card-content class="cardContent">
           <mat-card-subtitle>{{listing.title}}</mat-card-subtitle>
           <h2>{{listing.price}} $</h2>
         </mat-card-content>
         <mat-card-actions align="end">
-          <button mat-icon-button>
-            <mat-icon class="icons" aria-hidden="false" aria-label="cart icon">shopping_cart</mat-icon>
-          </button>
+          <button mat-flat-button routerLink="/listings/{{listing.id}}">View</button>
         </mat-card-actions>
       </mat-card>
     </div>

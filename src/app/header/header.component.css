@@ -17,3 +17,17 @@ mat-toolbar {
 mat-toolbar {
   border-bottom: #7f543f 1px solid;
 }
+
+.links {
+  text-decoration: none;
+  color: #7f543f;
+}
+
+.links:hover {
+  color: #946c5a;
+}
+
+mat-icon {
+  padding-top: 14px;
+  padding-left: 5px;
+}
