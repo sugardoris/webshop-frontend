@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterPipe } from './listings/filter.pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -48,6 +49,7 @@ import { AddOrEditComponent } from './add-or-edit/add-or-edit.component';
     PaymentCompleteComponent,
     LoginComponent,
     AddOrEditComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +70,7 @@ import { AddOrEditComponent } from './add-or-edit/add-or-edit.component';
     MatDialogModule,
     MatProgressSpinnerModule,
     MatSelectModule,
+    FormsModule,
   ],
   providers: [
     {

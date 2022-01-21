@@ -21,30 +21,36 @@
       <h3>Moneyback guarantee</h3>
     </div>
   </div>
-  <hr class="divider">
-  <div fxLayout="row" fxLayoutAlign="start" class="cartItem p-2 ms-5 me-5">
-    <img class="listingImg me-5 ms-5" src="assets/images/thumb/lilac-bag.png" alt="image">
-    <div fxLayout="column" fxLayoutAlign="space-between center" class="titleAndAmount ms-5">
-      <h3>Listing Title</h3>
-      <h5>Amount bought</h5>
-      <div fxLayout="row" fxLayoutAlign="center center" class="amount">
-        <button class="less">-</button>
-        <input disabled style="width: 50px; text-align: center" value="1">
-        <button class="more ps-2 pe-2">+</button>
+
+  <div *ngIf="cartItems.length == 0" class="nothing" fxLayoutAlign="center center">
+    <h1>Nothing in here yet!</h1>
+  </div>
+
+  <div *ngFor="let item of cartItems">
+    <hr class="divider">
+    <div fxLayout="row" fxLayoutAlign="start" class="cartItem p-2 ms-5 me-5">
+      <img class="listingImg me-5 ms-5" src="{{item.imageUrl}}" alt="image">
+      <div fxLayout="column" fxLayoutAlign="space-between start" class="titleAndAmount ms-5">
+        <h3>{{item.title}}</h3>
+        <div fxLayout="row" fxLayoutAlign="start center" class="amount">
+          <button class="less" (click)="less(item.id)">-</button>
+          <input disabled style="width: 50px; text-align: center" value="{{item.inCart}}">
+          <button class="more ps-2 pe-2" (click)="more(item.id)">+</button>
+        </div>
+      </div>
+      <span class="spacer"></span>
+      <div fxLayout="column" fxLayoutAlign="space-evenly center" class="titleAndAmount me-5">
+        <h1>{{item.price}} $</h1>
+        <button mat-stroked-button class="remove ps-3 pt-1 pe-3 pb-1" (click)="removeItem(item.id)">Remove</button>
       </div>
     </div>
-    <span class="spacer"></span>
-    <div fxLayout="column" fxLayoutAlign="space-evenly center" class="titleAndAmount me-5">
-      <h1>200 $</h1>
-      <button mat-stroked-button class="remove ps-3 pt-1 pe-3 pb-1">Remove</button>
-    </div>
+    <hr class="divider">
   </div>
-  <hr class="divider">
   <div fxLayout="row" fxLayoutAlign="start" class="proceed p-2 ms-5 me-5 mt-5 mb-5">
     <button mat-stroked-button class="continue ps-3 pt-1 pe-3 pb-1 mt-5 ms-3" routerLink="/listings">Continue shopping</button>
     <span class="spacer"></span>
-    <div fxLayout="column" fxLayoutAlign="space-evenly end" class="titleAndAmount me-5">
-      <h1>Total: 200 $</h1>
+    <div fxLayout="column" fxLayoutAlign="space-evenly end" class="titleAndAmount me-5" *ngIf="cartItems.length > 0">
+      <h1>Total: {{total}} $</h1>
       <button mat-stroked-button class="proceedButton ps-3 pt-1 pe-3 pb-1" routerLink="/checkout">Proceed to checkout</button>
     </div>
   </div>

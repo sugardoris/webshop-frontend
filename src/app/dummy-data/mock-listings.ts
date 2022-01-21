@@ -18,7 +18,8 @@ export const MockListings: Listing[] = [
     price: 370,
     category: Categories.BAGS,
     imageUrl: '../../assets/images/thumb/navy-blue-bag.png',
-    amount: 0,
+    inStock: 0,
+    inCart: 0,
   },
   {
     id: 2,
@@ -36,7 +37,8 @@ export const MockListings: Listing[] = [
     price: 420,
     category: Categories.BAGS,
     imageUrl: '../../assets/images/thumb/lilac-bag.png',
-    amount: 5,
+    inStock: 5,
+    inCart: 0,
   },
   {
     id: 3,
@@ -54,7 +56,8 @@ export const MockListings: Listing[] = [
     price: 420,
     category: Categories.BAGS,
     imageUrl: '../../assets/images/thumb/red-bag.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 4,
@@ -70,7 +73,8 @@ export const MockListings: Listing[] = [
     price: 90,
     category: Categories.DOILIES,
     imageUrl: '../../assets/images/thumb/doily4.png',
-    amount: 0,
+    inStock: 0,
+    inCart: 0,
   },
   {
     id: 5,
@@ -86,7 +90,8 @@ export const MockListings: Listing[] = [
     price: 70,
     category: Categories.DOILIES,
     imageUrl: '../../assets/images/thumb/doily-1.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 6,
@@ -102,7 +107,8 @@ export const MockListings: Listing[] = [
     price: 70,
     category: Categories.DOILIES,
     imageUrl: '../../assets/images/thumb/doily2.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 7,
@@ -118,7 +124,8 @@ export const MockListings: Listing[] = [
     price: 70,
     category: Categories.DOILIES,
     imageUrl: '../../assets/images/thumb/doily3.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 8,
@@ -133,7 +140,8 @@ export const MockListings: Listing[] = [
     price: 30,
     category: Categories.BOOKMARKS,
     imageUrl: '../../assets/images/thumb/bookmark1.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 9,
@@ -148,7 +156,8 @@ export const MockListings: Listing[] = [
     price: 30,
     category: Categories.BOOKMARKS,
     imageUrl: '../../assets/images/thumb/bookmark2.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 10,
@@ -163,7 +172,8 @@ export const MockListings: Listing[] = [
     price: 30,
     category: Categories.BOOKMARKS,
     imageUrl: '../../assets/images/thumb/bookmark3.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 11,
@@ -179,7 +189,8 @@ export const MockListings: Listing[] = [
     price: 30,
     category: Categories.BOOKMARKS,
     imageUrl: '../../assets/images/thumb/xmas-bookmark.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 12,
@@ -195,7 +206,8 @@ export const MockListings: Listing[] = [
     price: 35,
     category: Categories.ORNAMENTS,
     imageUrl: '../../assets/images/thumb/mandolin-xmas.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 13,
@@ -211,7 +223,8 @@ export const MockListings: Listing[] = [
     price: 35,
     category: Categories.ORNAMENTS,
     imageUrl: '../../assets/images/thumb/violin-xmas.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 14,
@@ -227,7 +240,8 @@ export const MockListings: Listing[] = [
     price: 35,
     category: Categories.ORNAMENTS,
     imageUrl: '../../assets/images/thumb/drum-xmas.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 15,
@@ -243,7 +257,8 @@ export const MockListings: Listing[] = [
     price: 35,
     category: Categories.ORNAMENTS,
     imageUrl: '../../assets/images/thumb/harp-xmas.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 16,
@@ -258,7 +273,8 @@ export const MockListings: Listing[] = [
     price: 20,
     category: Categories.MAGNETS,
     imageUrl: '../../assets/images/thumb/cauldron.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 17,
@@ -273,7 +289,8 @@ export const MockListings: Listing[] = [
     price: 20,
     category: Categories.MAGNETS,
     imageUrl: '../../assets/images/thumb/jack-o-lantern.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 18,
@@ -288,7 +305,8 @@ export const MockListings: Listing[] = [
     price: 20,
     category: Categories.MAGNETS,
     imageUrl: '../../assets/images/thumb/moon.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
   {
     id: 19,
@@ -303,6 +321,7 @@ export const MockListings: Listing[] = [
     price: 20,
     category: Categories.MAGNETS,
     imageUrl: '../../assets/images/thumb/house.png',
-    amount: 1,
+    inStock: 1,
+    inCart: 0,
   },
 ];

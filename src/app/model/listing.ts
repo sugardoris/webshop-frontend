@@ -7,5 +7,6 @@ export interface Listing {
   price: number;
   category: string;
   imageUrl: string;
-  amount: number;
+  inStock: number;
+  inCart: number;
 }

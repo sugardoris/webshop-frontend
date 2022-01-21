@@ -1,20 +1,23 @@
 <div fxLayout="row" fxLayoutAlign="space-evenly" class="p-5">
-  <button class="category pt-3 pb-3 mat-elevation-z2">
-    <a class="category-link" href="#">BAGS</a>
+  <button class="category pt-3 pb-3 mat-elevation-z2" (click)="filter('Bags')">
+    <a class="category-link">BAGS</a>
   </button>
-  <button class="category pt-3 pb-3 mat-elevation-z2">
-    <a class="category-link" href="#">BOOKMARKS</a>
+  <button class="category pt-3 pb-3 mat-elevation-z2" (click)="filter('Bookmarks')">
+    <a class="category-link">BOOKMARKS</a>
   </button>
-  <button class="category pt-3 pb-3 mat-elevation-z2">
-    <a class="category-link" href="#">CHRISTMAS</a>
+  <button class="category pt-3 pb-3 mat-elevation-z2" (click)="filter('Magnets')">
+    <a class="category-link">MAGNETS</a>
   </button>
-  <button class="category pt-3 pb-3 mat-elevation-z2">
-    <a class="category-link" href="#">DOILIES</a>
+  <button class="category pt-3 pb-3 mat-elevation-z2" (click)="filter('Doilies')">
+    <a class="category-link">DOILIES</a>
+  </button>
+  <button class="category pt-3 pb-3 mat-elevation-z2" (click)="filter('Ornaments')">
+    <a class="category-link">CHRISTMAS</a>
   </button>
 </div>
 <div class="content" fxLayoutAlign="center center">
   <div fxLayout="row wrap" fxLayoutGap="30px grid" fxFlex="90%">
-    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let listing of listings">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let listing of filteredListings">
       <mat-card class="mat-elevation-z3" tabindex="0">
         <img mat-card-image src="{{listing.imageUrl}}" alt="image" routerLink="/listings/{{listing.id}}">
         <mat-card-content class="cardContent">
@@ -22,8 +25,8 @@
           <h2>{{listing.price}} $</h2>
         </mat-card-content>
         <mat-card-actions align="end">
-          <button mat-flat-button routerLink="/listings/{{listing.id}}" [disabled]="listing.amount == 0">
-            {{listing.amount == 0 ? 'Out of Stock' : 'View'}}
+          <button mat-flat-button routerLink="/listings/{{listing.id}}" [disabled]="listing.inStock == 0">
+            {{listing.inStock == 0 ? 'Out of Stock' : 'View'}}
           </button>
         </mat-card-actions>
       </mat-card>

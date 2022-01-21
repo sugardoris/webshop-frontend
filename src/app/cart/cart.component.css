@@ -57,3 +57,8 @@ h1, h3, h5 {
 .more {
   border-radius: 0 5px 5px 0;
 }
+
+.nothing {
+  padding-top: 105px;
+  padding-bottom: 30px;
+}
