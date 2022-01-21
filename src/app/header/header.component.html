@@ -15,7 +15,7 @@
   <button mat-icon-button aria-label="instagram icon" (click)="navigateInsta()">
     <img class="iconImg" src="../../assets/images/thumb/instagram.png">
   </button>
-  <a class="links" routerLink="/cart">
-    <mat-icon class="links" color="accent">shopping_cart</mat-icon>
+  <a class="links pe-5" routerLink="/cart">
+    <mat-icon matBadge="{{cartItemAmount}}" matBadgeSize="medium" matBadgePosition="below" matBadgeOverlap="false" class="cartIcon" color="accent">shopping_cart</mat-icon>
   </a>
 </mat-toolbar>

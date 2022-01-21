@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +13,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  @Input() cartItemAmount: number = 0;
+  constructor(private cartService: CartService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cartItemAmount = this.cartService.cartItemAmount;
+  }
 
   navigatePinterest() {
     const url = 'https://www.pinterest.com/madewithlovecroatia';

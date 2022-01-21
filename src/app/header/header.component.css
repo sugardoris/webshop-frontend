@@ -19,8 +19,18 @@ mat-toolbar {
 }
 
 .links {
+  font-size: large;
   text-decoration: none;
   color: #7f543f;
+}
+
+.cartIcon {
+  text-decoration: none;
+  color: #7f543f;
+}
+
+.cartIcon:hover {
+  color: #946c5a;
 }
 
 .links:hover {

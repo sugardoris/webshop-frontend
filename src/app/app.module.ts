@@ -35,6 +35,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentCompleteComponent } from './payment-complete/payment-complete.component';
 import { LoginComponent } from './login/login.component';
 import { AddOrEditComponent } from './add-or-edit/add-or-edit.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { AddOrEditComponent } from './add-or-edit/add-or-edit.component';
     MatProgressSpinnerModule,
     MatSelectModule,
     FormsModule,
+    MatBadgeModule,
   ],
   providers: [
     {
