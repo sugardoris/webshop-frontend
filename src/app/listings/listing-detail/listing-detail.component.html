@@ -3,14 +3,22 @@
 <div fxLayout="row" class="pt-3" *ngIf="listing">
   <div fxLayoutAlign="center" fxFlex class="mat-elevation-z0">
     <div class="p-5">
-      <img src="{{listing.imageUrl}}" alt="detail-img">
+      <img src="{{listing.imageUrl}}" alt="detail-img" style="border-radius: 3px">
     </div>
   </div>
-  <div fxLayoutAlign="left" fxFlex class="mat-elevation-z0">
+  <div fxLayoutAlign="start" fxFlex class="mat-elevation-z0">
     <div class="p-5 aboutText1">
       <h1>{{listing.title}}</h1>
       <h2>{{listing.price}} $</h2>
-      <button class="ps-4 pt-2 pe-4 pb-2 cartButton" mat-stroked-button>Add to cart</button>
+      <p *ngIf="listing.amount == 1" class="onlyOne">Only 1 left!</p>
+      <div fxLayout="row" fxLayoutAlign="start center" class="amount mb-2">
+        <button class="less" (click)="less()" [disabled]="listing.amount == 1">-</button>
+        <input disabled style="width: 85px; text-align: center" value="{{inputAmount}}">
+        <button class="more ps-2 pe-2" (click)="more()" [disabled]="listing.amount == 1">+</button>
+      </div>
+      <button class="ps-4 pt-2 pe-4 pb-2 cartButton" mat-stroked-button [disabled]="listing.amount == 0">
+        {{listing.amount == 0 ? 'Out of Stock' : 'Add to Cart'}}
+      </button>
       <div class="info mt-4 mb-4">
         <h3>Information</h3>
         <ul class="infoList">

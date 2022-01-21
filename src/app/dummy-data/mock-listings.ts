@@ -18,7 +18,7 @@ export const MockListings: Listing[] = [
     price: 370,
     category: Categories.BAGS,
     imageUrl: '../../assets/images/thumb/navy-blue-bag.png',
-    amount: 1,
+    amount: 0,
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ export const MockListings: Listing[] = [
     price: 420,
     category: Categories.BAGS,
     imageUrl: '../../assets/images/thumb/lilac-bag.png',
-    amount: 1,
+    amount: 5,
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ export const MockListings: Listing[] = [
     price: 90,
     category: Categories.DOILIES,
     imageUrl: '../../assets/images/thumb/doily4.png',
-    amount: 1,
+    amount: 0,
   },
   {
     id: 5,

@@ -33,3 +33,23 @@ mat-icon {
 .back:hover {
   color: black;
 }
+
+button:disabled {
+  background-color: white !important;
+  color: #757575 !important;
+}
+
+.onlyOne {
+  font-family: Playfair Display, serif;
+  color: #701d00;
+}
+
+.less {
+  border-radius: 5px 0 0 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.more {
+  border-radius: 0 5px 5px 0;
+}

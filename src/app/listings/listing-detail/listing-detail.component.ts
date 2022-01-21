@@ -11,6 +11,7 @@ import { ListingService } from '../listing.service';
 })
 export class ListingDetailComponent implements OnInit {
   @Input() listing?: Listing;
+  inputAmount: number = 1;
   constructor(
     private location: Location,
     private route: ActivatedRoute,
@@ -31,5 +32,17 @@ export class ListingDetailComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  more() {
+    if (this.listing?.amount != this.inputAmount) {
+      this.inputAmount++;
+    }
+  }
+
+  less() {
+    if (this.inputAmount != 1) {
+      this.inputAmount--;
+    }
   }
 }

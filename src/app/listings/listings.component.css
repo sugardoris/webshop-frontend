@@ -58,3 +58,8 @@ button {
 button:hover {
   color: black;
 }
+
+button:disabled {
+  background-color: white !important;
+  color: #757575 !important;
+}

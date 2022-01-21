@@ -22,7 +22,9 @@
           <h2>{{listing.price}} $</h2>
         </mat-card-content>
         <mat-card-actions align="end">
-          <button mat-flat-button routerLink="/listings/{{listing.id}}">View</button>
+          <button mat-flat-button routerLink="/listings/{{listing.id}}" [disabled]="listing.amount == 0">
+            {{listing.amount == 0 ? 'Out of Stock' : 'View'}}
+          </button>
         </mat-card-actions>
       </mat-card>
     </div>
