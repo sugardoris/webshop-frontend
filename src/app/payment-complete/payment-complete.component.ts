@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-payment-complete',
   templateUrl: './payment-complete.component.html',
-  styleUrls: ['./payment-complete.component.css']
+  styleUrls: ['./payment-complete.component.css'],
 })
 export class PaymentCompleteComponent implements OnInit {
+  isDone: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    this.processPayment();
   }
 
+  processPayment() {
+    setTimeout(() => {
+      this.isDone = true;
+    }, 3000);
+  }
 }

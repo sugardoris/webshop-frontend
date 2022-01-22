@@ -51,4 +51,10 @@ export class CartService {
     }
     return this.totalPrice;
   }
+
+  clearCart() {
+    this.cartItems = [];
+    this.itemCount = 0;
+    this.totalPrice = 0;
+  }
 }

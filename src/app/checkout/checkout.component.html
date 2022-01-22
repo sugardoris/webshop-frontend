@@ -85,41 +85,24 @@
             <mat-card-title>Payment Summary</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <div class="mt-4">
-              <div fxLayout="row" fxLayoutAlign="start" class="p-1">
-                <h3 class="me-5">Listing Title</h3>
-                <h3>Amount bought</h3>
-                <span class="spacer"></span>
-                <h2>200 $</h2>
-              </div>
-              <div fxLayout="row" fxLayoutAlign="start" class="p-1">
-                <h3 class="me-5">Listing Title</h3>
-                <h3>Amount bought</h3>
-                <span class="spacer"></span>
-                <h2>200 $</h2>
-              </div>
-              <div fxLayout="row" fxLayoutAlign="start" class="p-1">
-                <h3 class="me-5">Listing Title</h3>
-                <h3>Amount bought</h3>
-                <span class="spacer"></span>
-                <h2>200 $</h2>
-              </div>
-              <div fxLayout="row" fxLayoutAlign="start" class="p-1">
-                <h3 class="me-5">Listing Title</h3>
-                <h3>Amount bought</h3>
-                <span class="spacer"></span>
-                <h2>200 $</h2>
+            <div class="mt-4" *ngFor="let item of cartItems">
+              <div fxLayout="row" fxLayoutAlign="space-between" class="p-1">
+                <div class="titleContainer" fxLayoutAlign="start">
+                  <h3>{{item.title}}</h3>
+                </div>
+                <h3>x{{item.inCart}}</h3>
+                <h2>{{item.price * item.inCart}} $</h2>
               </div>
             </div>
           </mat-card-content>
           <mat-card-actions align="end">
-            <mat-card-title>Total: $$$</mat-card-title>
+            <mat-card-title>Total: {{total}} $</mat-card-title>
           </mat-card-actions>
         </mat-card>
       </div>
       <div>
         <button mat-stroked-button matStepperPrevious class="me-3">Back</button>
-        <button mat-stroked-button style="color: #7f543f; background-color: #ebe6d9;" routerLink="/purchase">Checkout</button>
+        <button mat-stroked-button style="color: #7f543f; background-color: #ebe6d9;" routerLink="/purchase" (click)="clearCart()">Checkout</button>
       </div>
     </mat-step>
   </mat-stepper>

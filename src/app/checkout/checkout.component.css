@@ -9,3 +9,7 @@ mat-card {
 .stepper-wrapper {
   height: 570px;
 }
+
+.titleContainer {
+  width: 250px;
+}

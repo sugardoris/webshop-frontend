@@ -1,9 +1,9 @@
 <div style="height: 595px" fxLayoutAlign="center center">
-<!--  <div class="processing" fxLayoutAlign="center center" fxLayout="column">-->
-<!--&lt;!&ndash;    <mat-spinner class="spinner mb-5" [diameter]="60"></mat-spinner>&ndash;&gt;-->
-<!--    <h1 style="font-family: Playfair Display, serif">Your payment is being processed...</h1>-->
-<!--  </div>-->
-  <div class="thankyou" fxLayoutAlign="center center" fxLayout="column">
+  <div class="processing" fxLayoutAlign="center center" fxLayout="column" *ngIf="!isDone">
+    <mat-spinner class="spinner mb-5" [diameter]="60"></mat-spinner>
+    <h1 style="font-family: Playfair Display, serif">Your payment is being processed...</h1>
+  </div>
+  <div class="thankyou" fxLayoutAlign="center center" fxLayout="column" *ngIf="isDone">
     <h1 style="font-family: Playfair Display, serif">Thank you for your purchase!</h1>
     <h3 style="font-family: Playfair Display, serif">A confirmation e-mail has been sent to the e-mail address you provided.</h3>
     <button mat-button routerLink="/listings">Back to shop</button>
