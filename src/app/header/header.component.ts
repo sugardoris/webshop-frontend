@@ -13,11 +13,12 @@ import { CartService } from '../cart/cart.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  @Input() cartItemAmount: number = 0;
   constructor(private cartService: CartService) {}
 
-  ngOnInit(): void {
-    this.cartItemAmount = this.cartService.cartItemAmount;
+  ngOnInit(): void {}
+
+  get itemCount(): number {
+    return this.cartService.itemCount;
   }
 
   navigatePinterest() {

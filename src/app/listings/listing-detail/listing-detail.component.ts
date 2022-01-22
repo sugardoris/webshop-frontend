@@ -28,8 +28,6 @@ export class ListingDetailComponent implements OnInit {
         this.remainingAmount = 0;
       }
       this.remainingAmount = this.listing?.inStock - this.listing?.inCart;
-      console.log(this.remainingAmount);
-      console.log(this.listing.inCart);
     }
   }
 
@@ -61,8 +59,6 @@ export class ListingDetailComponent implements OnInit {
     if (this.listing) {
       this.cartService.addToCart(this.listing, this.inputAmount);
       this.remainingAmount -= this.inputAmount;
-      console.log(this.remainingAmount);
-      console.log(this.listing.inCart);
     }
   }
 }

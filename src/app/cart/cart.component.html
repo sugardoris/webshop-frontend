@@ -33,9 +33,9 @@
       <div fxLayout="column" fxLayoutAlign="space-between start" class="titleAndAmount ms-5">
         <h3>{{item.title}}</h3>
         <div fxLayout="row" fxLayoutAlign="start center" class="amount">
-          <button class="less" (click)="less(item.id)">-</button>
+          <button class="less" (click)="less(item.id)" [disabled]="item.inCart == 1">-</button>
           <input disabled style="width: 50px; text-align: center" value="{{item.inCart}}">
-          <button class="more ps-2 pe-2" (click)="more(item.id)">+</button>
+          <button class="more ps-2 pe-2" (click)="more(item.id)" [disabled]="item.inCart == item.inStock">+</button>
         </div>
       </div>
       <span class="spacer"></span>
