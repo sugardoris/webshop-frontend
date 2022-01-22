@@ -1,4 +1,4 @@
-<h1 class="ps-5 pt-5 pb-3">Add / Edit Item</h1>
+<h1 class="ps-5 pt-5 pb-3">{{editMode ? 'Edit Item' : 'Add Item'}}</h1>
 <form [formGroup]="itemGroup" class="ps-5 pb-5">
   <div>
     <mat-form-field appearance="outline" color="accent">
@@ -14,19 +14,20 @@
         <mat-option value="Bags">Bags</mat-option>
         <mat-option value="Bookmarks">Bookmarks</mat-option>
         <mat-option value="Ornaments">Ornaments</mat-option>
+        <mat-option value="Ornaments">Magnets</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field appearance="outline" color="accent">
       <mat-label>Price</mat-label>
-      <input matInput formControlName="price" required>
+      <input matInput formControlName="price" required type="number">
     </mat-form-field>
   </div>
   <div>
     <mat-form-field appearance="outline" color="accent">
       <mat-label>Amount</mat-label>
-      <input matInput formControlName="amount" required>
+      <input matInput formControlName="amount" required type="number">
     </mat-form-field>
   </div>
   <div>
@@ -38,7 +39,7 @@
   <div>
     <mat-form-field appearance="outline" color="accent">
       <mat-label>Description</mat-label>
-      <input matInput formControlName="description" required>
+      <textarea matInput formControlName="description" required></textarea>
     </mat-form-field>
   </div>
   <div>
@@ -50,19 +51,19 @@
   <div>
     <mat-form-field appearance="outline" color="accent">
       <mat-label>Height</mat-label>
-      <input matInput formControlName="height" required>
+      <input matInput formControlName="height" required type="number">
     </mat-form-field>
   </div>
   <div>
     <mat-form-field appearance="outline" color="accent">
       <mat-label>Width</mat-label>
-      <input matInput formControlName="width" required>
+      <input matInput formControlName="width" required type="number">
     </mat-form-field>
   </div>
   <div>
     <mat-form-field appearance="outline" color="accent">
       <mat-label>Depth</mat-label>
-      <input matInput formControlName="depth" required>
+      <input matInput formControlName="depth" required type="number">
     </mat-form-field>
   </div>
   <div>

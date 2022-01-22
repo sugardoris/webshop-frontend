@@ -1,5 +1,5 @@
 <div class="stepper-wrapper mt-4">
-  <mat-stepper #stepper>
+  <mat-stepper #stepper linear>
     <mat-step [stepControl]="firstFormGroup" errorMessage="Shipping information is required.">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Shipping Information</ng-template>
@@ -58,17 +58,19 @@
         <div>
           <mat-form-field appearance="fill" style="width: 420px">
             <mat-label>Card Number</mat-label>
-            <input matInput formControlName="cardNumber" required>
+            <input matInput formControlName="cardNumber" required maxlength="16">
           </mat-form-field>
         </div>
         <div>
-          <mat-form-field appearance="fill" class="me-3">
+          <mat-form-field appearance="fill" class="me-3" style="width: 200px">
             <mat-label>Expiration Date</mat-label>
-            <input matInput formControlName="expiration" required>
+            <input matInput formControlName="expiration" [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>CVC</mat-label>
-            <input matInput formControlName="cvc" required>
+            <input matInput formControlName="cvc" required maxlength="3">
           </mat-form-field>
         </div>
         <div>
@@ -102,7 +104,9 @@
       </div>
       <div>
         <button mat-stroked-button matStepperPrevious class="me-3">Back</button>
-        <button mat-stroked-button style="color: #7f543f; background-color: #ebe6d9;" routerLink="/purchase" (click)="clearCart()">Checkout</button>
+        <button mat-stroked-button style="color: #7f543f; background-color: #ebe6d9;" routerLink="/purchase"
+                (click)="clearCart()">Checkout
+        </button>
       </div>
     </mat-step>
   </mat-stepper>

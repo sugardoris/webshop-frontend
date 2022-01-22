@@ -18,22 +18,29 @@ import { CartService } from '../cart/cart.service';
 export class CheckoutComponent implements OnInit {
   cartItems: Listing[] = [];
   total: number = 0;
+  startDate = new Date(2023, 0, 1);
 
   firstFormGroup = new FormGroup({
-    email: new FormControl(''),
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    address: new FormControl(''),
-    city: new FormControl(''),
-    postalCode: new FormControl(''),
-    country: new FormControl(''),
+    email: new FormControl('', [Validators.email, Validators.required]),
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    address: new FormControl('', Validators.required),
+    city: new FormControl('', Validators.required),
+    postalCode: new FormControl('', Validators.required),
+    country: new FormControl('', Validators.required),
   });
 
   secondFormGroup = new FormGroup({
-    cardHolder: new FormControl(''),
-    cardNumber: new FormControl(''),
-    expiration: new FormControl(''),
-    cvc: new FormControl(''),
+    cardHolder: new FormControl('', Validators.required),
+    cardNumber: new FormControl('', [
+      Validators.minLength(16),
+      Validators.maxLength(16),
+    ]),
+    expiration: new FormControl('', Validators.required),
+    cvc: new FormControl('', [
+      Validators.minLength(3),
+      Validators.maxLength(3),
+    ]),
   });
 
   constructor(private cartService: CartService) {}

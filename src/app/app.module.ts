@@ -36,6 +36,8 @@ import { PaymentCompleteComponent } from './payment-complete/payment-complete.co
 import { LoginComponent } from './login/login.component';
 import { AddOrEditComponent } from './add-or-edit/add-or-edit.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatSelectModule,
     FormsModule,
     MatBadgeModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [
     {

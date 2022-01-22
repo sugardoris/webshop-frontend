@@ -7,17 +7,19 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-or-edit.component.css'],
 })
 export class AddOrEditComponent {
+  editMode: boolean = false;
+
   itemGroup = new FormGroup({
-    title: new FormControl(''),
-    category: new FormControl(''),
-    price: new FormControl(''),
-    amount: new FormControl(''),
-    imageUrl: new FormControl(''),
-    description: new FormControl(''),
-    materials: new FormControl(''),
-    height: new FormControl(''),
-    width: new FormControl(''),
-    depth: new FormControl(''),
+    title: new FormControl('', Validators.required),
+    category: new FormControl('', Validators.required),
+    price: new FormControl('', Validators.required),
+    amount: new FormControl('', Validators.required),
+    imageUrl: new FormControl('', Validators.required),
+    description: new FormControl('', Validators.required),
+    materials: new FormControl('', Validators.required),
+    height: new FormControl('', [Validators.required, Validators.min(0)]),
+    width: new FormControl('', [Validators.required, Validators.min(0)]),
+    depth: new FormControl('', [Validators.required, Validators.min(0)]),
   });
 
   selected = 'Doilies';
