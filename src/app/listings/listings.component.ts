@@ -12,6 +12,7 @@ import { FilterPipe } from './filter.pipe';
 export class ListingsComponent implements OnInit {
   listings: Listing[] = [];
   filteredListings: Listing[] = [];
+  isAdmin: boolean = false;
 
   constructor(
     private listingService: ListingService,
@@ -19,6 +20,7 @@ export class ListingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.checkIsUserAdmin();
     this.getListings();
   }
 
@@ -29,5 +31,9 @@ export class ListingsComponent implements OnInit {
 
   filter(field: string) {
     this.filteredListings = this.filterPipe.transform(this.listings, field);
+  }
+
+  checkIsUserAdmin() {
+    this.isAdmin = true;
   }
 }

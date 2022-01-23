@@ -16,8 +16,11 @@
         <input disabled style="width: 85px; text-align: center" value="{{inputAmount}}">
         <button class="more ps-2 pe-2" (click)="more()" [disabled]="remainingAmount == 1">+</button>
       </div>
-      <button class="ps-4 pt-2 pe-4 pb-2 cartButton" mat-stroked-button [disabled]="(listing.inStock == 0) || (remainingAmount == 0)" (click)="addToCart()">
+      <button *ngIf="!isAdmin" class="ps-4 pt-2 pe-4 pb-2 cartButton" mat-stroked-button [disabled]="(listing.inStock == 0) || (remainingAmount == 0)" (click)="addToCart()">
         {{listing.inStock == 0 ? 'Out of Stock' : 'Add to Cart'}}
+      </button>
+      <button *ngIf="isAdmin" class="ps-4 pt-2 pe-4 pb-2 cartButton" mat-stroked-button routerLink="/admin/edit/{{listing.id}}">
+        Edit
       </button>
       <div class="info mt-4 mb-4">
         <h3>Information</h3>

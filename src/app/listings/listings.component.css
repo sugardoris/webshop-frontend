@@ -63,3 +63,7 @@ button:disabled {
   background-color: white !important;
   color: #757575 !important;
 }
+
+.add {
+  margin-left: 45px;
+}

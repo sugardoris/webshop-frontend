@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'purchase', component: PaymentCompleteComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin/dashboard', component: ListingsComponent },
-  { path: 'admin/add-or-edit', component: AddOrEditComponent },
+  { path: 'admin/:mode', component: AddOrEditComponent },
+  { path: 'admin/:mode/:id', component: AddOrEditComponent },
 ];
 
 @NgModule({

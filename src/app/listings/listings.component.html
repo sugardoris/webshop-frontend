@@ -1,4 +1,9 @@
-<div fxLayout="row" fxLayoutAlign="space-evenly" class="p-5">
+<div class="add pt-5 ps-5" *ngIf="isAdmin">
+  <button class="category pt-3 pb-3 ms-5 mat-elevation-z2">
+    Add New Listing
+  </button>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-evenly" class="p-5 mt-3">
   <button class="category pt-3 pb-3 mat-elevation-z2" (click)="filter('Bags')">
     <a class="category-link">BAGS</a>
   </button>
@@ -25,6 +30,9 @@
           <h2>{{listing.price}} $</h2>
         </mat-card-content>
         <mat-card-actions align="end">
+          <button mat-icon-button *ngIf="isAdmin">
+            <mat-icon>delete_outline</mat-icon>
+          </button>
           <button mat-flat-button routerLink="/listings/{{listing.id}}" [disabled]="listing.inStock == 0">
             {{listing.inStock == 0 ? 'Out of Stock' : 'View'}}
           </button>

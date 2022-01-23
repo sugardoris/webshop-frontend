@@ -14,6 +14,7 @@ export class ListingDetailComponent implements OnInit {
   @Input() listing?: Listing;
   inputAmount: number = 1;
   remainingAmount: number = 0;
+  isAdmin: boolean = false;
   constructor(
     private location: Location,
     private route: ActivatedRoute,
@@ -22,6 +23,7 @@ export class ListingDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.checkIsUserAdmin();
     this.getListing();
     if (this.listing) {
       if (this.listing.inStock == 0) {
@@ -60,5 +62,9 @@ export class ListingDetailComponent implements OnInit {
       this.cartService.addToCart(this.listing, this.inputAmount);
       this.remainingAmount -= this.inputAmount;
     }
+  }
+
+  checkIsUserAdmin() {
+    this.isAdmin = true;
   }
 }
