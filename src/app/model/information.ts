@@ -3,5 +3,5 @@ export interface Information {
   materials: string;
   height: number;
   width: number;
-  depth?: number;
+  depth: number;
 }

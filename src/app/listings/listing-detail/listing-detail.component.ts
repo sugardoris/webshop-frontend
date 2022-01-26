@@ -15,6 +15,7 @@ export class ListingDetailComponent implements OnInit {
   inputAmount: number = 1;
   remainingAmount: number = 0;
   isAdmin: boolean = false;
+
   constructor(
     private location: Location,
     private route: ActivatedRoute,
@@ -37,7 +38,11 @@ export class ListingDetailComponent implements OnInit {
     const listingId = this.route.snapshot.paramMap.get('id');
 
     if (listingId !== null) {
-      this.listing = this.listingService.getListing(listingId);
+      this.listingService
+        .getListing(listingId)
+        .subscribe((listing) => (this.listing = listing));
+    } else {
+      console.error('Listing ID cannot be null!');
     }
   }
 

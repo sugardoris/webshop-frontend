@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ListingService } from './listing.service';
 import { Listing } from '../model/listing';
 import { FilterPipe } from './filter.pipe';
+import { MockListings } from '../dummy-data/mock-listings';
 
 @Component({
   selector: 'app-listings',
@@ -24,9 +25,12 @@ export class ListingsComponent implements OnInit {
     this.getListings();
   }
 
-  getListings(): void {
-    this.listings = this.listingService.getListings();
-    this.filteredListings = this.listings;
+  getListings() {
+    this.listingService.getListings().subscribe((listings) => {
+      this.listings = listings;
+      console.log(this.listings);
+      this.filteredListings = this.listings;
+    });
   }
 
   filter(field: string) {
@@ -35,5 +39,11 @@ export class ListingsComponent implements OnInit {
 
   checkIsUserAdmin() {
     this.isAdmin = true;
+  }
+
+  delete(listing: Listing): void {
+    this.listings = this.listings?.filter((l) => l !== listing);
+    this.filteredListings = this.listings;
+    this.listingService.deleteListing(listing.id.toString()).subscribe();
   }
 }

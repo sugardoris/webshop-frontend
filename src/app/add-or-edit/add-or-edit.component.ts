@@ -45,20 +45,25 @@ export class AddOrEditComponent implements OnInit {
     }
   }
 
-  getListingData(id: string) {
-    this.listing = this.listingService.getListing(id);
-    this.selected = this.listing.category;
-    this.itemGroup.patchValue({
-      title: this.listing.title,
-      category: this.listing.category,
-      price: this.listing.price,
-      amount: this.listing.inStock,
-      imageUrl: this.listing.imageUrl,
-      description: this.listing.info.description,
-      materials: this.listing.info.materials,
-      height: this.listing.info.height,
-      width: this.listing.info.width,
-      depth: this.listing.info.depth,
-    });
+  getListingData(listingId: string) {
+    this.listingService
+      .getListing(listingId)
+      .subscribe((listing) => (this.listing = listing));
+
+    if (this.listing) {
+      this.selected = this.listing.category;
+      this.itemGroup.patchValue({
+        title: this.listing.title,
+        category: this.listing.category,
+        price: this.listing.price,
+        amount: this.listing.inStock,
+        imageUrl: this.listing.imageUrl,
+        description: this.listing.info.description,
+        materials: this.listing.info.materials,
+        height: this.listing.info.height,
+        width: this.listing.info.width,
+        depth: this.listing.info.depth,
+      });
+    }
   }
 }

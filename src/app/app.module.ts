@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterPipe } from './listings/filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -77,6 +78,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatBadgeModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    HttpClientModule,
   ],
   providers: [
     {
