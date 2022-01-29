@@ -65,12 +65,12 @@ export class ListingDetailComponent implements OnInit {
 
   addToCart() {
     if (this.listing) {
-      this.cartService.addToCart(this.listing, this.inputAmount);
+      this.cartService.addToCart(this.listing, this.inputAmount, 0);
       this.remainingAmount -= this.inputAmount;
     }
   }
 
   checkIsUserAdmin() {
-    this.isAdmin = true;
+    this.isAdmin = false;
   }
 }

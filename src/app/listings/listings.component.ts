@@ -41,7 +41,7 @@ export class ListingsComponent implements OnInit {
   }
 
   checkIsUserAdmin() {
-    this.isAdmin = true;
+    this.isAdmin = false;
   }
 
   delete(listing: Listing): void {

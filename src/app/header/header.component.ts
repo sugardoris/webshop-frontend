@@ -15,7 +15,9 @@ import { CartService } from '../cart/cart.service';
 export class HeaderComponent implements OnInit {
   constructor(private cartService: CartService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cartService.getCartFromStorage();
+  }
 
   get itemCount(): number {
     return this.cartService.itemCount;

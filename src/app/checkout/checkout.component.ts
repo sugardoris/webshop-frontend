@@ -40,6 +40,8 @@ export class CheckoutComponent implements OnInit {
     cvc: new FormControl('', [
       Validators.minLength(3),
       Validators.maxLength(3),
+      Validators.min(100),
+      Validators.max(999),
     ]),
   });
 
@@ -59,6 +61,6 @@ export class CheckoutComponent implements OnInit {
   }
 
   clearCart() {
-    this.cartService.clearCart();
+    this.cartService.clearCart(0);
   }
 }

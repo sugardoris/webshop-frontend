@@ -15,12 +15,13 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.getListings();
+    this.getCartItems();
     this.getTotalPrice();
     this.getItemCount();
   }
 
-  getListings() {
+  getCartItems() {
+    this.cartService.getCartFromStorage();
     this.cartItems = this.cartService.cartItems;
   }
 
@@ -33,36 +34,22 @@ export class CartComponent implements OnInit {
   }
 
   less(itemId: number) {
-    // let index = this.cartItems.findIndex((item) => item.id == itemId);
-    // if (this.cartItems[index].inCart != 1) {
-    //   this.cartItems[index].inCart--;
-    //   this.itemCount--;
-    //   console.log('Cart item amount: ' + this.itemCount);
-    //   this.total -= this.cartItems[index].price;
-    // }
     let index = this.cartItems.findIndex((item) => item.id == itemId);
     if (this.cartItems[index].inCart != 1) {
       let item = this.cartItems.find((item) => item.id == itemId);
       if (item) {
-        this.cartService.addToCart(item, -1);
+        this.cartService.addToCart(item, -1, 0);
       }
       this.getTotalPrice();
     }
   }
 
   more(itemId: number) {
-    // let index = this.cartItems.findIndex((item) => item.id == itemId);
-    // if (this.cartItems[index].inCart < this.cartItems[index].inStock) {
-    //   this.cartItems[index].inCart++;
-    //   this.itemCount++;
-    //   console.log('Cart item amount: ' + this.itemCount);
-    //   this.total += this.cartItems[index].price;
-    // }
     let index = this.cartItems.findIndex((item) => item.id == itemId);
     if (this.cartItems[index].inCart < this.cartItems[index].inStock) {
       let item = this.cartItems.find((item) => item.id == itemId);
       if (item) {
-        this.cartService.addToCart(item, 1);
+        this.cartService.addToCart(item, 1, 0);
       }
       this.getTotalPrice();
     }
@@ -73,7 +60,7 @@ export class CartComponent implements OnInit {
     if (item) {
       this.itemCount -= item.inCart;
     }
-    this.cartService.removeFromCart(itemId);
+    this.cartService.removeFromCart(itemId, 0);
     this.cartItems = this.cartItems.filter((item) => item.id != itemId);
     console.log('Cart item amount: ' + this.itemCount);
     this.getTotalPrice();
