@@ -55,7 +55,7 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit() {
     this.getUser();
-    if (this.isUserLoggedIn()) {
+    if (!this.isUserLoggedIn()) {
       this.router.navigateByUrl('/login');
     }
     this.getListings();

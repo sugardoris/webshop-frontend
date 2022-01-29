@@ -8,6 +8,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentCompleteComponent } from './payment-complete/payment-complete.component';
 import { LoginComponent } from './login/login.component';
 import { AddOrEditComponent } from './add-or-edit/add-or-edit.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
@@ -18,9 +19,16 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'purchase', component: PaymentCompleteComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin/dashboard', component: ListingsComponent },
-  { path: 'admin/:mode', component: AddOrEditComponent },
-  { path: 'admin/:mode/:id', component: AddOrEditComponent },
+  {
+    path: 'admin/:mode',
+    component: AddOrEditComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'admin/:mode/:id',
+    component: AddOrEditComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
