@@ -6,6 +6,8 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { CartService } from '../cart/cart.service';
+import { AuthService } from '../auth.service';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +15,10 @@ import { CartService } from '../cart/cart.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.cartService.getCartFromStorage();
@@ -21,6 +26,10 @@ export class HeaderComponent implements OnInit {
 
   get itemCount(): number {
     return this.cartService.itemCount;
+  }
+
+  get isLoggedIn(): boolean {
+    return this.authService.isAuthenticated();
   }
 
   navigatePinterest() {
@@ -31,5 +40,9 @@ export class HeaderComponent implements OnInit {
   navigateInsta() {
     const url = 'https://www.instagram.com/mwlcroatia/';
     window.open(url, '_blank');
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

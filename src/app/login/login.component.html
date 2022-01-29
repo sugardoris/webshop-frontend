@@ -20,6 +20,7 @@
         <div *ngIf="password?.errors?.['required']" class="text-danger">Password is required</div>
       </div>
     </div>
+    <div *ngIf="errorMessage" class="text-danger">{{errorMessage}}</div>
     <div fxLayoutAlign="center">
       <button mat-stroked-button type="submit" [disabled]="loginFormGroup.invalid">Login</button>
     </div>

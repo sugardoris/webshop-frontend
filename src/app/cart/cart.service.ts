@@ -88,4 +88,8 @@ export class CartService {
       this.calculateTotal();
     }
   }
+
+  moveToUserCart(userId: number) {
+    localStorage.setItem(userId.toString(), JSON.stringify(this.cartItems));
+  }
 }

@@ -7,16 +7,33 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { User } from '../model/user';
+import { AuthService } from '../auth.service';
+import { UserCredentials } from '../model/userCredentials';
+import { Router } from '@angular/router';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
-  submittedLogin: boolean = false;
-  submitterRegister: boolean = false;
+export class LoginComponent implements OnInit {
   loginMode: boolean = true;
+  currentUser?: User;
+  errorMessage: string = '';
+
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private cartService: CartService
+  ) {}
+
+  ngOnInit() {
+    this.authService.errorEmitter.subscribe((error: string) => {
+      this.errorMessage = error;
+    });
+  }
 
   loginFormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -61,28 +78,33 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.loginMode) {
-      this.submittedLogin = true;
-      let user = {
+      let userCredentials: UserCredentials = {
         email: this.loginFormGroup.value.email,
         password: this.loginFormGroup.value.password,
       };
-      console.log(user);
+
+      this.authService.authenticate(userCredentials).subscribe((user) => {
+        localStorage.setItem('user', JSON.stringify(user));
+        this.authService.getCurrentUser();
+        this.cartService.moveToUserCart(user.id);
+        this.router.navigateByUrl('/listings');
+      });
     } else {
-      this.submitterRegister = true;
-      let user = {
+      let user: User = {
+        id: 0,
         email: this.registerFormGroup.value.email,
         password: this.registerFormGroup.value.password,
         role: 'user',
       };
-      console.log(user);
+
+      this.authService.register(user).subscribe((user) => {
+        console.log(user);
+        this.router.navigateByUrl('/login');
+      });
     }
   }
 
   registerMode() {
     this.loginMode = !this.loginMode;
-  }
-
-  onRegister() {
-    console.log(this.registerFormGroup.value);
   }
 }

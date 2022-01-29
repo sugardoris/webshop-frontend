@@ -3,6 +3,8 @@ import { ListingService } from './listing.service';
 import { Listing } from '../model/listing';
 import { FilterPipe } from './filter.pipe';
 import { MockListings } from '../dummy-data/mock-listings';
+import { AuthService } from '../auth.service';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-listings',
@@ -17,11 +19,15 @@ export class ListingsComponent implements OnInit {
 
   constructor(
     private listingService: ListingService,
-    private filterPipe: FilterPipe
+    private filterPipe: FilterPipe,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.checkIsUserAdmin();
+    this.getUser();
+    if (this.isUserLoggedIn()) {
+      this.checkIsUserAdmin();
+    }
     this.getListings();
   }
 
@@ -40,13 +46,25 @@ export class ListingsComponent implements OnInit {
     this.filteredListings = this.listings;
   }
 
-  checkIsUserAdmin() {
-    this.isAdmin = false;
-  }
-
   delete(listing: Listing): void {
     this.listings = this.listings?.filter((l) => l !== listing);
     this.filteredListings = this.listings;
     this.listingService.deleteListing(listing.id.toString()).subscribe();
+  }
+
+  isUserLoggedIn(): boolean {
+    return this.authService.isAuthenticated();
+  }
+
+  getUser() {
+    this.authService.getCurrentUser();
+  }
+
+  checkIsUserAdmin() {
+    if (this.authService.currentUser?.role == 'admin') {
+      this.isAdmin = true;
+    } else {
+      this.isAdmin = false;
+    }
   }
 }

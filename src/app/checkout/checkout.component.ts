@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { Listing } from '../model/listing';
 import { CartService } from '../cart/cart.service';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -45,9 +47,17 @@ export class CheckoutComponent implements OnInit {
     ]),
   });
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
+    this.getUser();
+    if (this.isUserLoggedIn()) {
+      this.router.navigateByUrl('/login');
+    }
     this.getListings();
     this.getTotalPrice();
   }
@@ -61,6 +71,17 @@ export class CheckoutComponent implements OnInit {
   }
 
   clearCart() {
-    this.cartService.clearCart(0);
+    if (this.authService.currentUser) {
+      let userId = this.authService.currentUser.id;
+      this.cartService.clearCart(userId);
+    }
+  }
+
+  isUserLoggedIn(): boolean {
+    return this.authService.isAuthenticated();
+  }
+
+  getUser() {
+    this.authService.getCurrentUser();
   }
 }

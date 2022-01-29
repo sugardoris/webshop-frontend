@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Listing } from '../model/listing';
 import { CartService } from './cart.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-cart',
@@ -11,10 +12,18 @@ export class CartComponent implements OnInit {
   cartItems: Listing[] = [];
   total: number = 0;
   itemCount: number = 0;
+  userId: number = 0;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
+    this.getUser();
+    if (this.authService.currentUser) {
+      this.userId = this.authService.currentUser.id;
+    }
     this.getCartItems();
     this.getTotalPrice();
     this.getItemCount();
@@ -38,7 +47,7 @@ export class CartComponent implements OnInit {
     if (this.cartItems[index].inCart != 1) {
       let item = this.cartItems.find((item) => item.id == itemId);
       if (item) {
-        this.cartService.addToCart(item, -1, 0);
+        this.cartService.addToCart(item, -1, this.userId);
       }
       this.getTotalPrice();
     }
@@ -49,7 +58,7 @@ export class CartComponent implements OnInit {
     if (this.cartItems[index].inCart < this.cartItems[index].inStock) {
       let item = this.cartItems.find((item) => item.id == itemId);
       if (item) {
-        this.cartService.addToCart(item, 1, 0);
+        this.cartService.addToCart(item, 1, this.userId);
       }
       this.getTotalPrice();
     }
@@ -60,9 +69,13 @@ export class CartComponent implements OnInit {
     if (item) {
       this.itemCount -= item.inCart;
     }
-    this.cartService.removeFromCart(itemId, 0);
+    this.cartService.removeFromCart(itemId, this.userId);
     this.cartItems = this.cartItems.filter((item) => item.id != itemId);
     console.log('Cart item amount: ' + this.itemCount);
     this.getTotalPrice();
+  }
+
+  getUser() {
+    this.authService.getCurrentUser();
   }
 }

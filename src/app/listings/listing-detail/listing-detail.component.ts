@@ -4,6 +4,7 @@ import { Listing } from '../../model/listing';
 import { ActivatedRoute } from '@angular/router';
 import { ListingService } from '../listing.service';
 import { CartService } from '../../cart/cart.service';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-listing-detail',
@@ -20,11 +21,15 @@ export class ListingDetailComponent implements OnInit {
     private location: Location,
     private route: ActivatedRoute,
     private listingService: ListingService,
-    private cartService: CartService
+    private cartService: CartService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.checkIsUserAdmin();
+    this.getUser();
+    if (this.isUserLoggedIn()) {
+      this.checkIsUserAdmin();
+    }
     this.getListing();
   }
 
@@ -70,7 +75,19 @@ export class ListingDetailComponent implements OnInit {
     }
   }
 
+  isUserLoggedIn(): boolean {
+    return this.authService.isAuthenticated();
+  }
+
+  getUser() {
+    this.authService.getCurrentUser();
+  }
+
   checkIsUserAdmin() {
-    this.isAdmin = false;
+    if (this.authService.currentUser?.role == 'admin') {
+      this.isAdmin = true;
+    } else {
+      this.isAdmin = false;
+    }
   }
 }
