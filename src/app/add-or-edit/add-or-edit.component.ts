@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Listing } from '../model/listing';
 import { ListingService } from '../listings/listing.service';
+import { Location } from '@angular/common';
+import { Information } from '../model/information';
 
 @Component({
   selector: 'app-add-or-edit',
@@ -13,6 +15,13 @@ export class AddOrEditComponent implements OnInit {
   editMode: boolean = false;
   selected = 'Doilies';
   listing?: Listing;
+  categories = [
+    { id: 1, name: 'Bags' },
+    { id: 2, name: 'Doilies' },
+    { id: 3, name: 'Bookmarks' },
+    { id: 4, name: 'Magnets' },
+    { id: 5, name: 'Ornaments' },
+  ];
 
   itemGroup = new FormGroup({
     title: new FormControl('', Validators.required),
@@ -29,7 +38,9 @@ export class AddOrEditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private listingService: ListingService
+    private listingService: ListingService,
+    private location: Location,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -46,23 +57,73 @@ export class AddOrEditComponent implements OnInit {
   }
 
   getListingData(listingId: string) {
-    this.listingService
-      .getListing(listingId)
-      .subscribe((listing) => (this.listing = listing));
+    this.listingService.getListing(listingId).subscribe((listing) => {
+      this.listing = listing;
 
+      if (this.listing) {
+        this.selected = this.listing.category;
+        this.itemGroup.patchValue({
+          title: this.listing.title,
+          category: this.listing.category,
+          price: this.listing.price,
+          amount: this.listing.inStock,
+          imageUrl: this.listing.imageUrl,
+          description: this.listing.info.description,
+          materials: this.listing.info.materials,
+          height: this.listing.info.height,
+          width: this.listing.info.width,
+          depth: this.listing.info.depth,
+        });
+      }
+    });
+  }
+
+  goBack() {
+    this.location.back();
+  }
+
+  onSubmit() {
     if (this.listing) {
-      this.selected = this.listing.category;
-      this.itemGroup.patchValue({
-        title: this.listing.title,
-        category: this.listing.category,
-        price: this.listing.price,
-        amount: this.listing.inStock,
-        imageUrl: this.listing.imageUrl,
-        description: this.listing.info.description,
-        materials: this.listing.info.materials,
-        height: this.listing.info.height,
-        width: this.listing.info.width,
-        depth: this.listing.info.depth,
+      this.listing.title = this.itemGroup.value.title;
+      this.listing.price = this.itemGroup.value.price;
+      this.listing.category = this.itemGroup.value.category;
+      this.listing.imageUrl = this.itemGroup.value.imageUrl;
+      this.listing.inStock = this.itemGroup.value.amount;
+      this.listing.inCart = 0;
+      this.listing.info.description = this.itemGroup.value.description;
+      this.listing.info.materials = this.itemGroup.value.materials;
+      this.listing.info.height = this.itemGroup.value.height;
+      this.listing.info.width = this.itemGroup.value.width;
+      this.listing.info.depth = this.itemGroup.value.depth;
+
+      console.log(this.listing);
+      this.listingService.updateListing(this.listing).subscribe(async (res) => {
+        if (res.status == 200) {
+          await this.router.navigateByUrl('/listings/' + this.listing?.id);
+        }
+      });
+    } else {
+      let listingInfo: Information = {
+        description: this.itemGroup.value.description,
+        materials: this.itemGroup.value.materials,
+        height: this.itemGroup.value.height,
+        width: this.itemGroup.value.width,
+        depth: this.itemGroup.value.depth,
+      };
+      let newListing: Listing = {
+        id: 0,
+        title: this.itemGroup.value.title,
+        info: listingInfo,
+        price: this.itemGroup.value.price,
+        category: this.itemGroup.value.category,
+        imageUrl: this.itemGroup.value.imageUrl,
+        inStock: this.itemGroup.value.amount,
+        inCart: 0,
+      };
+
+      console.log(newListing);
+      this.listingService.addListing(newListing).subscribe(async (res) => {
+        await this.router.navigateByUrl('/listings');
       });
     }
   }

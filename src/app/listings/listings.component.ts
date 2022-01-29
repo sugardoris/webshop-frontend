@@ -28,13 +28,16 @@ export class ListingsComponent implements OnInit {
   getListings() {
     this.listingService.getListings().subscribe((listings) => {
       this.listings = listings;
-      console.log(this.listings);
       this.filteredListings = this.listings;
     });
   }
 
   filter(field: string) {
     this.filteredListings = this.filterPipe.transform(this.listings, field);
+  }
+
+  removeFilter() {
+    this.filteredListings = this.listings;
   }
 
   checkIsUserAdmin() {

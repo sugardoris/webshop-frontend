@@ -1,9 +1,12 @@
 <div class="add pt-5 ps-5" *ngIf="isAdmin">
-  <button class="category pt-3 pb-3 ms-5 mat-elevation-z2">
+  <button class="category pt-3 pb-3 mat-elevation-z2" routerLink="/admin/add">
     Add New Listing
   </button>
 </div>
 <div fxLayout="row" fxLayoutAlign="space-evenly" class="p-5 mt-3">
+  <button class="category pt-3 pb-3 mat-elevation-z2" (click)="removeFilter()">
+    <a class="category-link">ALL</a>
+  </button>
   <button class="category pt-3 pb-3 mat-elevation-z2" (click)="filter('Bags')">
     <a class="category-link">BAGS</a>
   </button>

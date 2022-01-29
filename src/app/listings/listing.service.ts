@@ -18,7 +18,7 @@ export class ListingService {
 
   getListings(): Observable<Listing[]> {
     return this.http.get<Listing[]>(this.listingsUrl).pipe(
-      tap((listings) => console.log(listings)),
+      tap((_) => console.log('fetched listings')),
       catchError(this.handleError<Listing[]>('getListings', []))
     );
   }
@@ -26,7 +26,7 @@ export class ListingService {
   getListing(listingId: string): Observable<Listing> {
     const url = `${this.listingsUrl}/${listingId}`;
     return this.http.get<Listing>(url).pipe(
-      tap((_) => console.log(`fetched listing with id = ${listingId}`)),
+      tap((listing) => console.log(`fetched listing with id = ${listing.id}`)),
       catchError(this.handleError<Listing>(`getListing with id = ${listingId}`))
     );
   }

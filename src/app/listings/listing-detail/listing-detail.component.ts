@@ -26,21 +26,22 @@ export class ListingDetailComponent implements OnInit {
   ngOnInit(): void {
     this.checkIsUserAdmin();
     this.getListing();
-    if (this.listing) {
-      if (this.listing.inStock == 0) {
-        this.remainingAmount = 0;
-      }
-      this.remainingAmount = this.listing?.inStock - this.listing?.inCart;
-    }
   }
 
   getListing() {
     const listingId = this.route.snapshot.paramMap.get('id');
 
     if (listingId !== null) {
-      this.listingService
-        .getListing(listingId)
-        .subscribe((listing) => (this.listing = listing));
+      this.listingService.getListing(listingId).subscribe((listing) => {
+        this.listing = listing;
+
+        if (this.listing) {
+          if (this.listing.inStock == 0) {
+            this.remainingAmount = 0;
+          }
+          this.remainingAmount = this.listing?.inStock - this.listing?.inCart;
+        }
+      });
     } else {
       console.error('Listing ID cannot be null!');
     }

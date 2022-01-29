@@ -1,4 +1,4 @@
-<button mat-flat-button class="ms-4 mt-5 back" (click)="goBack()">Back to shop</button>
+<button mat-flat-button class="ms-4 mt-5 back" routerLink="/listings">Back to shop</button>
 
 <div fxLayout="row" class="pt-3" *ngIf="listing">
   <div fxLayoutAlign="center" fxFlex class="mat-elevation-z0">
@@ -35,13 +35,13 @@
           </li>
           <li class="pb-2" fxLayoutAlign="start center">
             <mat-icon class="me-2">content_cut</mat-icon>
-            Materials: {{listing.info.materials}}
+            Materials: {{listing.info?.materials}}
           </li>
           <li class="pb-2" fxLayoutAlign="start center">
             <mat-icon class="me-2">straighten</mat-icon>
-            Height: {{listing.info.height}} cm
-            Width: {{listing.info.width}} cm
-            Depth: {{listing.info.depth}} cm
+            Height: {{listing.info?.height}} cm
+            Width: {{listing.info?.width}} cm
+            Depth: {{listing.info?.depth}} cm
           </li>
         </ul>
       </div>

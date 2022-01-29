@@ -1,5 +1,7 @@
+<button mat-flat-button class="ms-4 mt-4 back" (click)="goBack()">Back</button>
+
 <h1 class="ps-5 pt-5 pb-3">{{editMode ? 'Edit Item' : 'Add Item'}}</h1>
-<form [formGroup]="itemGroup" class="ps-5 pb-5">
+<form [formGroup]="itemGroup" class="ps-5 pb-5" (ngSubmit)="onSubmit()">
   <div>
     <mat-form-field appearance="outline" color="accent">
       <mat-label>Title</mat-label>
@@ -9,12 +11,10 @@
   <div>
     <mat-form-field appearance="outline" color="accent">
       <mat-label>Category</mat-label>
-      <mat-select [(value)]="selected">
-        <mat-option value="Doilies">Doilies</mat-option>
-        <mat-option value="Bags">Bags</mat-option>
-        <mat-option value="Bookmarks">Bookmarks</mat-option>
-        <mat-option value="Ornaments">Ornaments</mat-option>
-        <mat-option value="Ornaments">Magnets</mat-option>
+      <mat-select formControlName="category">
+        <mat-option *ngFor="let category of categories" [value]="category.name">
+          {{category.name}}
+        </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
