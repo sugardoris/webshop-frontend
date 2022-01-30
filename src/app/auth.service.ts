@@ -54,7 +54,11 @@ export class AuthService {
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      this.errorEmitter.next('Wrong credentials!');
+      if (error.status == 404) {
+        this.errorEmitter.next("User with this email doesn't exist");
+      } else {
+        this.errorEmitter.next('Wrong credentials!');
+      }
       console.error(operation);
       console.error(error);
       return of(result as T);

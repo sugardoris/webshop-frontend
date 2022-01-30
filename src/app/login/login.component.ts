@@ -83,11 +83,16 @@ export class LoginComponent implements OnInit {
         password: this.loginFormGroup.value.password,
       };
 
-      this.authService.authenticate(userCredentials).subscribe((user) => {
-        localStorage.setItem('user', JSON.stringify(user));
-        this.authService.getCurrentUser();
-        this.cartService.moveToUserCart(user.id);
-        this.router.navigateByUrl('/listings');
+      this.authService.authenticate(userCredentials).subscribe(async (user) => {
+        await localStorage.setItem('user', JSON.stringify(user));
+        await this.authService.getCurrentUser();
+        await console.log(this.authService.currentUser);
+        if (this.authService.currentUser) {
+          await this.cartService.moveToUserCart(
+            this.authService.currentUser.id
+          );
+        }
+        await this.router.navigateByUrl('/listings');
       });
     } else {
       let user: User = {
@@ -97,14 +102,30 @@ export class LoginComponent implements OnInit {
         role: 'user',
       };
 
-      this.authService.register(user).subscribe((user) => {
-        console.log(user);
-        this.router.navigateByUrl('/login');
+      this.authService.register(user).subscribe(async (user) => {
+        await this.registerMode();
       });
     }
   }
 
   registerMode() {
     this.loginMode = !this.loginMode;
+
+    this.loginFormGroup.patchValue({
+      email: '',
+      password: '',
+    });
+
+    this.loginFormGroup.markAsUntouched();
+    this.loginFormGroup.markAsPristine();
+
+    this.registerFormGroup.patchValue({
+      email: '',
+      password: '',
+      repeatPassword: '',
+    });
+
+    this.registerFormGroup.markAsUntouched();
+    this.registerFormGroup.markAsPristine();
   }
 }
