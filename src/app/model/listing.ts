@@ -6,6 +6,7 @@ export interface Listing {
   info: Information;
   price: number;
   category: string;
+  thumbImgUrl: string;
   imageUrl: string;
   inStock: number;
   inCart: number;

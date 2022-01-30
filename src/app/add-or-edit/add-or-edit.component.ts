@@ -19,8 +19,7 @@ export class AddOrEditComponent implements OnInit {
     { id: 1, name: 'Bags' },
     { id: 2, name: 'Doilies' },
     { id: 3, name: 'Bookmarks' },
-    { id: 4, name: 'Magnets' },
-    { id: 5, name: 'Ornaments' },
+    { id: 4, name: 'Ornaments' },
   ];
 
   itemGroup = new FormGroup({
@@ -28,6 +27,7 @@ export class AddOrEditComponent implements OnInit {
     category: new FormControl('', Validators.required),
     price: new FormControl('', Validators.required),
     amount: new FormControl('', Validators.required),
+    thumbImgUrl: new FormControl('', Validators.required),
     imageUrl: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
     materials: new FormControl('', Validators.required),
@@ -67,6 +67,7 @@ export class AddOrEditComponent implements OnInit {
           category: this.listing.category,
           price: this.listing.price,
           amount: this.listing.inStock,
+          thumbImgUrl: this.listing.thumbImgUrl,
           imageUrl: this.listing.imageUrl,
           description: this.listing.info.description,
           materials: this.listing.info.materials,
@@ -87,6 +88,7 @@ export class AddOrEditComponent implements OnInit {
       this.listing.title = this.itemGroup.value.title;
       this.listing.price = this.itemGroup.value.price;
       this.listing.category = this.itemGroup.value.category;
+      this.listing.thumbImgUrl = this.itemGroup.value.thumbImgUrl;
       this.listing.imageUrl = this.itemGroup.value.imageUrl;
       this.listing.inStock = this.itemGroup.value.amount;
       this.listing.inCart = 0;
@@ -116,6 +118,7 @@ export class AddOrEditComponent implements OnInit {
         info: listingInfo,
         price: this.itemGroup.value.price,
         category: this.itemGroup.value.category,
+        thumbImgUrl: this.itemGroup.value.thumbImgUrl,
         imageUrl: this.itemGroup.value.imageUrl,
         inStock: this.itemGroup.value.amount,
         inCart: 0,

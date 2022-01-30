@@ -13,9 +13,6 @@
   <button class="category pt-3 pb-3 mat-elevation-z2" (click)="filter('Bookmarks')">
     <a class="category-link">BOOKMARKS</a>
   </button>
-  <button class="category pt-3 pb-3 mat-elevation-z2" (click)="filter('Magnets')">
-    <a class="category-link">MAGNETS</a>
-  </button>
   <button class="category pt-3 pb-3 mat-elevation-z2" (click)="filter('Doilies')">
     <a class="category-link">DOILIES</a>
   </button>
@@ -27,7 +24,7 @@
   <div fxLayout="row wrap" fxLayoutGap="30px grid" fxFlex="90%">
     <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let listing of filteredListings">
       <mat-card class="mat-elevation-z3" tabindex="0">
-        <img mat-card-image src="{{listing.imageUrl}}" alt="image" routerLink="/listings/{{listing.id}}">
+        <img mat-card-image src="{{listing.thumbImgUrl}}" alt="image" routerLink="/listings/{{listing.id}}">
         <mat-card-content class="cardContent">
           <mat-card-subtitle>{{listing.title}}</mat-card-subtitle>
           <h2>{{listing.price}} $</h2>
