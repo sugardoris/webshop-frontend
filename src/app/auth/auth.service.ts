@@ -13,8 +13,8 @@ export class AuthService {
   currentUser?: User | null;
   errorEmitter: Subject<string> = new Subject<string>();
 
-  private authUrl = 'http://localhost:8081/authenticate';
-  private apiUsersUrl = 'http://localhost:8081/api/users';
+  private authUrl = '/authenticate';
+  private apiUsersUrl = '/api/users';
 
   constructor(private http: HttpClient, private router: Router) {}
 
