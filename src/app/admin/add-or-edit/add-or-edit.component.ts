@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Listing } from '../model/listing';
-import { ListingService } from '../listings/listing.service';
+import { Listing } from '../../model/listing';
+import { ListingService } from '../../listings/listing.service';
 import { Location } from '@angular/common';
-import { Information } from '../model/information';
+import { Information } from '../../model/information';
 
 @Component({
   selector: 'app-add-or-edit',

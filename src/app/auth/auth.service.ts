@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { User } from './model/user';
+import { User } from '../model/user';
 import { Observable, of, Subject, tap } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { UserCredentials } from './model/userCredentials';
+import { UserCredentials } from '../model/userCredentials';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({

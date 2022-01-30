@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ListingsComponent } from './listings/listings.component';
 import { ListingDetailComponent } from './listings/listing-detail/listing-detail.component';
-import { CartComponent } from './cart/cart.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { PaymentCompleteComponent } from './payment-complete/payment-complete.component';
-import { LoginComponent } from './login/login.component';
-import { AddOrEditComponent } from './add-or-edit/add-or-edit.component';
-import { AuthGuard } from './auth.guard';
+import { CartComponent } from './user-orders/cart/cart.component';
+import { CheckoutComponent } from './user-orders/checkout/checkout.component';
+import { PaymentCompleteComponent } from './user-orders/payment-complete/payment-complete.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AddOrEditComponent } from './admin/add-or-edit/add-or-edit.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },

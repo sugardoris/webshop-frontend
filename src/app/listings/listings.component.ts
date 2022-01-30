@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ListingService } from './listing.service';
 import { Listing } from '../model/listing';
 import { FilterPipe } from './filter.pipe';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-listings',

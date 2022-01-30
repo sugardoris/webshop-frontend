@@ -5,9 +5,9 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { CartService } from '../cart/cart.service';
-import { AuthService } from '../auth.service';
-import { User } from '../model/user';
+import { CartService } from '../../user-orders/cart/cart.service';
+import { AuthService } from '../../auth/auth.service';
+import { User } from '../../model/user';
 
 @Component({
   selector: 'app-header',

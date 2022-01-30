@@ -7,11 +7,11 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { User } from '../model/user';
+import { User } from '../../model/user';
 import { AuthService } from '../auth.service';
-import { UserCredentials } from '../model/userCredentials';
+import { UserCredentials } from '../../model/userCredentials';
 import { Router } from '@angular/router';
-import { CartService } from '../cart/cart.service';
+import { CartService } from '../../user-orders/cart/cart.service';
 
 @Component({
   selector: 'app-login',
