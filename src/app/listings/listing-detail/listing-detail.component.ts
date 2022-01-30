@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { Listing } from '../../model/listing';
 import { ActivatedRoute } from '@angular/router';
 import { ListingService } from '../listing.service';
-import { CartService } from '../../user-orders/cart/cart.service';
+import { CartService } from '../../user-orders/cart.service';
 import { AuthService } from '../../auth/auth.service';
 
 @Component({

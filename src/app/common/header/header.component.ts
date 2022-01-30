@@ -1,13 +1,6 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
-import { CartService } from '../../user-orders/cart/cart.service';
+import { Component, OnInit } from '@angular/core';
+import { CartService } from '../../user-orders/cart.service';
 import { AuthService } from '../../auth/auth.service';
-import { User } from '../../model/user';
 
 @Component({
   selector: 'app-header',

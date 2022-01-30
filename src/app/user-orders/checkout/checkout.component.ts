@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { Listing } from '../../model/listing';
-import { CartService } from '../cart/cart.service';
+import { CartService } from '../cart.service';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
 
