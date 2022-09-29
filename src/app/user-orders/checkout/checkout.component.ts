@@ -72,8 +72,7 @@ export class CheckoutComponent implements OnInit {
 
   clearCart() {
     if (this.authService.currentUser) {
-      let userId = this.authService.currentUser.id;
-      this.cartService.clearCart(userId);
+      this.cartService.clearCart();
     }
   }
 

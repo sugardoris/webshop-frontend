@@ -11,7 +11,7 @@ export class CartService {
 
   constructor() {}
 
-  addToCart(listing: Listing, amount: number, userId: number) {
+  addToCart(listing: Listing, amount: number, loggedIn: boolean) {
     let newItem = listing;
     let index = this.cartItems.findIndex((item) => item.id == listing.id);
     if (index != -1) {
@@ -27,14 +27,15 @@ export class CartService {
       this.calculateTotal();
     }
 
-    if (userId != 0) {
-      localStorage.setItem(userId.toString(), JSON.stringify(this.cartItems));
+    if (loggedIn) {
+      localStorage.setItem('loggedIn', JSON.stringify(this.cartItems));
+      console.log(localStorage.getItem('loggedIn'));
     } else {
       localStorage.setItem('anonymous', JSON.stringify(this.cartItems));
     }
   }
 
-  removeFromCart(id: number, userId: number) {
+  removeFromCart(id: number, loggedIn: boolean) {
     let item = this.cartItems.find((item) => item.id == id);
     if (item) {
       this.itemCount -= item.inCart;
@@ -44,8 +45,8 @@ export class CartService {
     console.log('Cart item amount: ' + this.itemCount);
     this.calculateTotal();
 
-    if (userId != 0) {
-      localStorage.setItem(userId.toString(), JSON.stringify(this.cartItems));
+    if (loggedIn) {
+      localStorage.setItem('loggedIn', JSON.stringify(this.cartItems));
     } else {
       localStorage.setItem('anonymous', JSON.stringify(this.cartItems));
     }
@@ -72,16 +73,21 @@ export class CartService {
     return this.itemCount;
   }
 
-  clearCart(userId: number) {
+  clearCart() {
     this.cartItems = [];
     this.itemCount = 0;
     this.totalPrice = 0;
-    localStorage.setItem(userId.toString(), JSON.stringify(this.cartItems));
+    localStorage.setItem('loggedIn', JSON.stringify(this.cartItems));
     localStorage.setItem('anonymous', JSON.stringify(this.cartItems));
   }
 
-  getCartFromStorage() {
-    let cart = localStorage.getItem('anonymous');
+  getCartFromStorage(loggedIn: boolean) {
+    let cart;
+    if (loggedIn) {
+      cart = localStorage.getItem('loggedIn');
+    } else {
+      cart = localStorage.getItem('anonymous');
+    }
     if (cart) {
       this.cartItems = JSON.parse(cart);
       this.getCount();
@@ -89,7 +95,15 @@ export class CartService {
     }
   }
 
-  moveToUserCart(userId: number) {
-    localStorage.setItem(userId.toString(), JSON.stringify(this.cartItems));
+  userLogout() {
+    this.cartItems = [];
+    this.itemCount = 0;
+    this.totalPrice = 0;
+    localStorage.setItem('anonymous', JSON.stringify(this.cartItems));
+    localStorage.setItem('loggedIn', JSON.stringify(this.cartItems));
+  }
+
+  moveToUserCart() {
+    localStorage.setItem('loggedIn', JSON.stringify(this.cartItems));
   }
 }

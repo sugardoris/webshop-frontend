@@ -14,7 +14,12 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.cartService.getCartFromStorage();
+    this.authService.getCurrentUser();
+    if (this.authService.currentUser) {
+      this.cartService.getCartFromStorage(this.authService.currentUser.id);
+    } else {
+      this.cartService.getCartFromStorage(0);
+    }
   }
 
   get itemCount(): number {
@@ -37,5 +42,6 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+    this.cartService.userLogout();
   }
 }

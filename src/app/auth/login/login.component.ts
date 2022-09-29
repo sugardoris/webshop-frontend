@@ -88,9 +88,7 @@ export class LoginComponent implements OnInit {
         await this.authService.getCurrentUser();
         await console.log(this.authService.currentUser);
         if (this.authService.currentUser) {
-          await this.cartService.moveToUserCart(
-            this.authService.currentUser.id
-          );
+          await this.cartService.moveToUserCart();
         }
         await this.router.navigateByUrl('/listings');
       });

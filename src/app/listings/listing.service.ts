@@ -10,7 +10,7 @@ import { catchError, tap } from 'rxjs/operators';
 export class ListingService {
   constructor(private http: HttpClient) {}
 
-  private listingsUrl = '/api/listings';
+  private listingsUrl = 'http://localhost:8081/api/listings';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

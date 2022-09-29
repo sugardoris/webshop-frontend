@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
   total: number = 0;
   itemCount: number = 0;
   userId: number = 0;
+  isLoggedIn: boolean = false;
 
   constructor(
     private cartService: CartService,
@@ -22,15 +23,17 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.getUser();
     if (this.authService.currentUser) {
-      this.userId = this.authService.currentUser.id;
+      this.isLoggedIn = true;
+      this.getCartItems(this.isLoggedIn);
+    } else {
+      this.getCartItems(this.isLoggedIn);
     }
-    this.getCartItems();
     this.getTotalPrice();
     this.getItemCount();
   }
 
-  getCartItems() {
-    this.cartService.getCartFromStorage();
+  getCartItems(loggedIn: boolean) {
+    this.cartService.getCartFromStorage(loggedIn);
     this.cartItems = this.cartService.cartItems;
   }
 
